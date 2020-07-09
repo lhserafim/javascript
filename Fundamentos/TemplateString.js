@@ -26,3 +26,9 @@ console.log(`1 + 1 = ${1 + 1}`);
 // Utilizando lambda (arrow function) + template String
 const up = texto => texto.toUpperCase();
 console.log(`EI...${up('luiz serafim')}`);
+
+// Exemplo pego do portal...
+let params = '';
+if(paramentros.get("empresa").value != '' && paramentros.get("empresa").value != null){
+    params += `codEmpresaDw=${paramentros.get("empresa").value.codEmpresaDw}&`;
+}
