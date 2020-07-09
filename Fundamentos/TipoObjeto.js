@@ -23,3 +23,9 @@ const prod2 = {
 
 console.log(prod2);
 
+const prod3 = {};
+prod3.nome = "Caneta";
+prod3.preco = 10;
+console.log(prod3);
+delete prod3.preco; // excluir dinamicamente um atributo de um objeto
+console.log(prod3); 

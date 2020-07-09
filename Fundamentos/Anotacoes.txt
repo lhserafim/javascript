@@ -1,0 +1,6 @@
+1. Variáveis
+    1.1. Atribuição por valor: Quando estou trabalhando com variáveis do tipo PRIMITIVO, e igualo elas ex.: a = b, 
+         estou fazendo uma cópia por valor, ou seja, os valores são independentes
+    1.2. Atribuição por referencia: Quando estou trabalhando com objetos, a variável recebe o endereço de memória onde está armazenada a 
+         informação, desta forma, quando igualo a = b, estou atribuindo o mesmo endereço de memória as 
+         variáveis a e b
