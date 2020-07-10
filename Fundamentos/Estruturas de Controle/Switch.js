@@ -1,4 +1,4 @@
-const diaSemana = 'sexta-feira';
+const diaSemana = 'sexta   feira';
 
 switch(diaSemana.toUpperCase()) {
     case 'DOMINGO':
@@ -27,4 +27,6 @@ switch(diaSemana.toUpperCase()) {
     case 'SABADO':
         console.log(7);                                        
         break;
+    default:
+        console.log('Valor inválido');
 }
