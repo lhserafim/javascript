@@ -44,3 +44,59 @@ soma(10, 10)(5);
 // ou 
 const funparte1 = soma(10,10);
 funparte1(5);
+
+// Parametros e retornos são opcionais em JS
+function func4(a, b) {
+    if (a < 5) {
+        console.log(a + b);
+    } else {
+        return a;
+    }
+}
+
+func4(4,3);
+func4(8,3);
+
+// Parametros variáveis
+// atualmente usamos o Rest / Spread
+// A função pode não receber argumentos, na sua definição, mas se ao chamá-la eu passar.. posso recuperar os argumentos
+function funcSemArgs(){
+    let soma = 0;
+    for (i in arguments) { // Lembra o Varargs
+        soma += arguments[i];
+    }
+    return soma;
+}
+
+console.log(funcSemArgs(10,20,30,40));
+
+// Parâmetro padrão
+// Usando o operador OU p/ substituir o null "igual NVL"
+function soma4(a, b, c) {
+    a = a || 1;
+    b = b || 1;
+    c = c || 1;
+    const soma = a + b + c;
+    console.log(soma);
+}
+
+soma4();
+
+// Obs, a estratégia acima da erro quando passo 0, pois ele troca 0 pelo default 1
+soma4(0,0,0);
+
+// Usando uma operação ternária p/ assumir um valor padrão
+function soma2(a, b, c) {
+    a = a !== undefined ? a : 1;
+    b = 1 in arguments ? b : 1; // 1 aqui é o indice do argumento (a = 0 , b = 1, c = 2)
+    c = isNaN(c) ? 1 : c;
+    return a + b + c;
+}
+console.log(soma2());
+
+// USANDO VALOR PADRÃO EC2015 -> NOVO PADRÃO MELHOR 
+function soma3(a = 1, b = 2, c = 3) {
+    return a + b + c;
+}
+
+console.log(soma3());
