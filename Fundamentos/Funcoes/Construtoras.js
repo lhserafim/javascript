@@ -1,4 +1,8 @@
 // Funções construtoras em JS se assemelham a classes, pois podem ser instanciadas
+// EM JS eu posso criar objetos a partir de:
+// Uma Função construtora
+// De uma Factory
+// A partir de uma classe
 
 function Carro(velocidadeMax = 200, delta = 5) {
     // Atributo privado -> pertence APENAS AO ESCOPO desta função
