@@ -1,4 +1,4 @@
-// Exemplo de contexto lexico 
+// Exemplo de contexto léxico 
 
 const local = 'Global';
 
