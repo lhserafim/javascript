@@ -34,6 +34,7 @@ const carro = {
         return seguroAtivo;
     }
 }
+console.log(typeof carro);
 console.log(carro.condutores,carro.temSeguro());
 carro.fabricante = 'CITROEN';
 console.log(carro.fabricante);
@@ -46,3 +47,54 @@ carro.condutores = [{ // Necessário passar o vetor completo, caso contrário va
 }];
 
 console.log(carro);
+
+// ESTRATÉGIA DE CRIAÇÃO DE OBJETOS
+console.log('ESTRATÉGIA DE CRIAÇÃO DE OBJETOS');
+// A notação literal PARECE JSON mas não é!
+
+// Usando notação literal
+const obj1 = {nome: 'Valor'}; // aqui dentro os atributos
+console.log(obj1);
+
+// Object em JS
+// Usando new Object()
+const obj2 = new Object({
+    nome: 'Valor'
+});
+console.log(obj2);
+
+// Funções construtoras
+function Produto(nome, preco) {
+    this.nome = nome; // Escopo global
+    let valor = preco; // Escopo de função
+    let valor2 = preco; // Escopo de função
+    this.getValor2 = () => { // Criando o getter p/ pegar um atributo privado
+        return valor2;
+    }
+    this.getValor2b = function() {
+        return valor2;
+    }
+}
+const obj3 = new Produto('Valor',10.00);
+console.log(obj3, obj3.getValor2(), obj3.getValor2b());
+
+// Função factory
+function criarAlgo(nome) {
+    return {
+        nome
+    }
+}
+
+const obj4 = criarAlgo('Valor');
+console.log(obj4);
+
+// Object.create
+const obj5 = Object.create(null);
+obj5.nome = 'Valor';
+console.log(obj5);
+
+// Criando a partir de um JSON
+const obj6 = JSON.parse('{"nome": "Valor"}');
+console.log(obj6);
+
+console.log(typeof obj1,typeof obj2,typeof obj3, typeof obj4, typeof obj5, typeof obj6);
