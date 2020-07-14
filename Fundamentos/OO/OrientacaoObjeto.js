@@ -98,3 +98,21 @@ const obj6 = JSON.parse('{"nome": "Valor"}');
 console.log(obj6);
 
 console.log(typeof obj1,typeof obj2,typeof obj3, typeof obj4, typeof obj5, typeof obj6);
+
+// Informações adicionais.
+// Porque eu "posso" alterar um valor de constante?
+// Na verdade é assim, quando eu crio uma constante e atribuo um valor a ela, como um objeto, eu estou atribuindo
+// um ENDEREÇO DE MEMÓRIA. Quando eu altero o conteúdo do objeto, eu NÃO ESTOU MEXENDO no apontamento para o 
+// end de memória, mas sim no objeto que está dentro deste endereço.
+// Caso eu queira transformar o objeto, que está neste endereço, como constante, devo usar o comando freeze.
+
+// Exemplo
+const objConstante = {nome: 'Luiz'}; //Object.freeze({nome: 'Luiz'});
+console.log(objConstante);
+
+objConstante.nome = 'Luiz Henrique'; // Permitiu alterar o obj
+console.log(objConstante);
+
+Object.freeze(objConstante);
+objConstante.nome = 'Luiz Henrique SS'; // Não vai deixar alterar
+console.log(objConstante);
