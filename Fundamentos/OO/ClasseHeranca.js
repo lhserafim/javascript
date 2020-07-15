@@ -1,4 +1,5 @@
 // Herança funciona em cima de prototype
+// Por traz são funçoes trabalhando com protótipos
 
 class Avo {
     constructor(sobrenome) {
