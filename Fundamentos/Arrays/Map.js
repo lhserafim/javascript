@@ -18,3 +18,19 @@ const divide2 = e => e / 2;
 resultado = nums.map(soma10).map(vezes2).map(divide2);
 
 console.log(resultado);
+
+// Desafio
+const carrinho = [
+    '{"nome": "Borracha", "preco": 7.45}',
+    '{"nome": "Caneta", "preco": 2.5}',
+    '{"nome": "Lápis", "preco": 1.4}',
+    '{"nome": "Caderno", "preco": 17.00}'
+]
+
+//console.log(JSON.parse('{"nome": "Borracha", "preco": 7.45}'));
+// Retornar um array apenas com os preços
+
+// 1 converti usando map, de JSON p/ object, 
+// depois ainda usando map, fiz uma função para percorrer os elementos e pegar o preço. Fiz desta forma pois era um vetor
+// Se não, poderia acessar diretamente o atributo preço
+console.log('Pegando só o valor dos produtos: ', carrinho.map(JSON.parse).map(e => e.preco));
