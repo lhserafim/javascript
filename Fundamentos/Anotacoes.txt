@@ -4,3 +4,7 @@
     1.2. Atribuição por referencia: Quando estou trabalhando com objetos, a variável recebe o endereço de memória onde está armazenada a 
          informação, desta forma, quando igualo a = b, estou atribuindo o mesmo endereço de memória as 
          variáveis a e b
+
+2. Node
+     2.1. Node é um runtime, um interpretador de JS que é executado do lado do servidor
+     2.2. Em node um arquivo representa um módulo
