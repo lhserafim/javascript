@@ -22,8 +22,7 @@ console.log(total1, total1/alunos.length);
 // no declarativo é o contrário do imperativo. Você diz o que precisa ser feito e INTERNAMENTE as coisas são feitas
 const getNota = a => a.nota;
 const soma = (acc, valor) => acc + valor;
-// Repare que eu não crio o laço for e nem variável de controle. Eu deixo a linguagem fazer isso
-const total2 = alunos.map(getNota).reduce(soma);
+const total2 = alunos.map(getNota).reduce(soma); // Repare que eu não crio o laço for e nem variável de controle. Eu deixo a linguagem fazer isso
 // Soma e Média
 console.log(total2, total2/ alunos.length);
 
