@@ -1,6 +1,8 @@
 // A função map é igual ao JAVA
 // Ela transforma os dados do array, gerando outro array com o mesmo número de elementos, sem modificar o array original
 
+// Sempre que eu precisar transformar um array em outro, usar o .map ao invés de fazer com forEach
+
 const nums = [1, 2, 3, 4, 5];
 
 let resultado = nums.map(function(e) { // vou usar só o primeiro elemento da callbackfn, que é o value
