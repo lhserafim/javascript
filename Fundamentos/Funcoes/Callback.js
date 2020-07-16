@@ -1,4 +1,11 @@
 // QUAL A IDÉIA DO CALBACK?
+/*
+forEach(callbackfn: (value: string, index: number, array: string[]) => void, thisArg?: any): void
+A function that accepts up to three arguments. 
+forEach calls the callbackfn function one time for each element in the array.
+*/
+
+Performs the specified action for each element in an array.
 // A idéia do CALLBACK é você passar uma funçao, para outra função e quando determinado evento acontecer,
 // esta função que você passou será chamada de volta
 
