@@ -35,3 +35,17 @@ console.log(aprovados);
 aprovados.splice(1,0, 'Jane', 'Antonio' ); // A partir do indice 1, deletar 0, adicionar 2 elementos
 // [ 'Bia', 'Daniela', 'Luiz', 'Carolina' ]
 console.log(aprovados);
+
+const pilotos = ['Vettel', 'Alonso', 'Kyviat', 'Leclerc', 'Latifi'];
+pilotos.pop(); // Remove o último item do array
+pilotos.shift(); // Remove o primeiro item do array
+console.log(pilotos);
+
+// Adicionar...
+pilotos.push('Hamilton'); // Adiciona ao final
+pilotos.unshift('Senna'); // Adiciona ao início do array
+console.log(pilotos);
+pilotos.splice(1,0,'Verstappen'); // A partir da posição 1, remover 0, adicionar 'Verstapen'
+console.log(pilotos);
+const pilotosAtuais = pilotos.slice(1,5); // Trabalha como um substring, não pega o elemento de indice 5
+console.log(pilotosAtuais);
