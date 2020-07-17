@@ -19,10 +19,19 @@
 const url = 'http://files.cod3r.com.br/curso-js/funcionarios.json';
 const axios = require('axios'); // passando assim, ele vai na pasta node_modules e no subdir axios e pega o arquivo index.js
 
-axios.get(url).then(response => {
-    const funcionarios = response.data;
-    console.log(funcionarios);
-});
-
 // Encontrar a mulher chinesa, com o menor salário
 // usar arrays, map, reduce, filter
+// usando o principio do reduce (acumulador, valor atual)
+const chinesas = f => f.pais === 'China';
+const genero = f => f.genero === 'M';
+const menorSalario = (func, funcAtual) => {
+    return func.salario < funcAtual.salario ? func : funcAtual;
+}
+
+axios.get(url).then(response => {
+    const funcionarios = response.data;
+    const func = funcionarios.filter(chinesas).filter(genero).reduce(menorSalario);
+    console.log(func);
+});
+
+
