@@ -6,7 +6,7 @@
  * Ex.:
  * sudo npm i lodash
  * ou 
- * sudo npm i -g npm
+ * sudo npm i -g npm // -g é global
  * sudo npm i --save lodash
  * */ 
 
