@@ -1,0 +1,35 @@
+<!-- Para startar o servidor digitar: http-server .-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícos HTML</title>
+</head>
+<body>
+    <header>
+        <h1>Exercícos HTML</h1>
+    </header>
+    <nav>
+        <a href="exercicios/teste.html">00 - Teste</a> | <a href="exercicios/testeB.html">00 - TesteB</a>
+    </nav>
+    <section id="conteudo"></section>
+    <br>
+    <footer>Curso de Web Moderno</footer>
+    <!-- Vou implementar um JS para capturar o click do usuário e impedir a navegação entre as páginas
+            e assim vou pegar o conteúdo da próxima página (via ajax) e jogar na minha página atual -->
+    <script>
+        // querySelectorAll - vai selecionar TODAS as tags indicadas (aqui a) e para cada vamos executar uma função
+        document.querySelectorAll('a').forEach(link => { // Estou pegando cada um dos links
+            const conteudo = document.getElementById('conteudo')
+            link.onclick = function(e) {
+                e.preventDefault() // previne o comportamento padrão, que é navegar
+                // fazendo uma requisição ajax e o resultado dela vou colocar no conteudo
+                fetch(link.href) // estou passando o link que peguei acima no forEach
+                    .then(resp => resp.text()) // função para pegar o conteúdo HTML da pagina q fiz a requisição
+                    .then(html => conteudo.innerHTML = html) // vai substituir o conteúdo da section, com o recuperado
+            }
+        })
+    </script>
+</body>
+</html>
