@@ -1,20 +1,29 @@
-<!-- Para startar o servidor digitar: http-server .-->
+<!--Instalar o servidor http: sudo npm i -g http-server 
+    Para startar o servidor, navegar para o diretório desejado e digitar: http-server .
+    Para evitar problemas d cache digitar o comando http-server -c-1 .
+    dizendo ao server que não é para armazenar a cache dos programas -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercícos HTML</title>
+    <!-- Aplicar CSS bem simples aqui diretamente na página 
+            Acessando via id # -->
+    <style>
+        #conteudo {
+            padding: 30px 0px;
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1>Exercícos HTML</h1>
     </header>
     <nav>
-        <a href="exercicios/teste.html">00 - Teste</a> | <a href="exercicios/testeB.html">00 - TesteB</a>
+        <a href="exercicios/teste.html">00 - Teste</a> | <a href="exercicios/texto1.html">01 - Texto1</a>
     </nav>
     <section id="conteudo"></section>
-    <br>
     <footer>Curso de Web Moderno</footer>
     <!-- Vou implementar um JS para capturar o click do usuário e impedir a navegação entre as páginas
             e assim vou pegar o conteúdo da próxima página (via ajax) e jogar na minha página atual -->
