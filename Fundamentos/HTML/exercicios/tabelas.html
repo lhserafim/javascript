@@ -1,0 +1,74 @@
+<h1>Tabelas</h1>
+
+<!-- Dica. Para comentar uma ou muitas linhas automaticamente aperte cmd + barra -->
+
+<!-- Setando a borda como visível border -->
+<!-- <table border="1">  -->
+<table>
+    <caption>Produtos</caption>
+    <!-- A tabela é dividida em thead e tbody -->
+    <thead>
+        <!-- tr é um table row. a linha de cabeçalho. Posso ter mais do que 1 -->
+        <tr>
+            <!-- th são os cabeçalhos das colunas -->
+            <th>Produto</th>
+            <th>Preço</th>
+            <th>Quantidade</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <!-- tbody é o corpo da minha tabela -->
+    <tbody>
+        <tr>
+            <td>iPad</td>
+            <td>3298,00</td>
+            <td>1</td>
+            <td>3298,00</td>
+        </tr>
+        <tr>
+            <td>MacBook</td>
+            <td>3298,00</td>
+            <td>1</td>
+            <td>3298,00</td>
+        </tr>
+        <tr>
+            <!-- td é um table data ou células -->
+            <td>MacBook Air</td>
+            <td>3298,00</td>
+            <td>1</td>
+            <td>3298,00</td>
+        </tr>
+    </tbody>
+    <!-- tfoot = rodapé -->
+    <tfoot>
+        <tr>
+            <!-- Quero ter apenas 2 itens no rodapé, ou seja, tenho que expandir meu td usando colspan ou rowspan  -->
+            <td colspan="3" rowspan="2">Total</td>
+            <td>9894,00</td>
+        </tr>
+    </tfoot>
+</table>
+
+<!-- Vou aplicar estilo a minha tabela -->
+<style>
+    table {
+        border-collapse: collapse;
+    }
+    /* Aplicando estilo a várias tags simultaneamente */
+    th, td {
+        padding: 10px;
+    }
+    /* Aplicando estilo a tag tr dentro de thead */
+    thead tr {
+        border-bottom: solid 3px #444;
+    }
+    /* Aplicando estilo quando o mouse pairar sobre o elemento tr do tbody */
+    tbody tr:hover {
+        background-color: #dedede;
+    }
+    tfoot {
+        background-color: #444;
+        color: #fff;
+        font-weight: bold;
+    }
+</style>
