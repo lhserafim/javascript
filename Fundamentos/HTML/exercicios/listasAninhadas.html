@@ -7,10 +7,11 @@
 <!-- Para poder aplicar o CSS vou chamar a lista de class="tree"-->
 <ul class="tree">
     <li>
-        backend
+        <!-- Vou envolver as "pastas" no span e adicionar um marcador wm-folder para poder localizá-lo posteriormente no script -->
+        <span wm-folder>backend</span>
         <ul>
             <li>
-                app
+                <span wm-folder>app</span>
                 <ul>
                     <li>produto.js</li>
                     <li>usuario.js</li>
@@ -18,7 +19,7 @@
                 </ul>
             </li>
             <li>
-                config
+                <span wm-folder>config</span>
                 <ul>
                     <li>bancos.js</li>
                     <li>rotas.js</li>
@@ -28,10 +29,10 @@
         </ul>
     </li>
     <li>
-        frontend
+        <span wm-folder>frontend</span>
         <ul>
             <li>
-                public
+                <span wm-folder>public</span>
                 <ul>
                     <li>app.css</li>
                     <li>app.js</li>
@@ -43,5 +44,14 @@
 
 <!-- Desafio! Fazer que os elementos da lista expandam e recolham conforme forem clicados -->
 <script>
-    console.log('Teste')
+    document.querySelectorAll('[wm-folder]').forEach(folder => { // este nome folder pode ser qualquer coisa. Poderia ser pasta
+        folder.onclick = function(e) { // O e é de evento, mas poderia ser qualquer coisa
+            //debugger // Para abrir a debugação no código
+            // Pegar a UL que está abaixo do elemento clicado
+            const ul = folder.nextElementSibling
+            //console.log(ul)
+            const displayAtual = ul.style.display // A partir da ul peguei a visibilidade deste display
+            ul.style.display = displayAtual === 'none' ? 'block' : 'none' // Atualizo o display com a cond. ternária
+        }
+    })
 </script>
