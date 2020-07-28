@@ -6,6 +6,7 @@ Pois, dentro do meu formulário eu terei alguns inputs e quando eu SUBMETER este
 os dados preenchidos e submeter isso ele vai para o servidor -->
 
 <form action="http://localhost:3003/usuarios" method="post">
+    <input type="hidden" name="id" value="3"> <!-- Este é um atributo escondido, que posso armazenar um valor para usar depois -->
     <input type="text" name="nome">
     <input type="password" name="senha">
     <textarea name="bio" cols="30" rows="10"></textarea>
@@ -37,7 +38,9 @@ os dados preenchidos e submeter isso ele vai para o servidor -->
         <option value="c#">C#</option>
     </select>
 
-    <button>Incluir</button>
+    <!-- Colocando uma ação diretamente no botão -->
+    <button formaction="http://localhost:3003/usuarios">Incluir</button> <!-- Posso inclusive alterar o método-->
+    <button formaction="http://localhost:3003/usuarios/3">Alterar</button>
 
 </form>
 

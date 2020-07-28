@@ -23,7 +23,13 @@ app.use(bodyParser.urlencoded({extended: true})) // e dizer que ela usa o bodyPa
 // Quero atender ao método POST em cima da URL /usuarios
 app.post('/usuarios', (req, resp) => {
     console.log(req.body)
-    resp.send('<h1>Parabéns</h1>')
+    resp.send('<h1>Parabéns. Usuário Incluido</h1>')
+})
+
+app.post('/usuarios/:id', (req, resp) => {
+    console.log(req.params.id)
+    console.log(req.body)
+    resp.send('<h1>Parabéns. Usuário Alterado!</h1>')
 })
 
 app.listen(3003) // Colocar a porta para escutar e digitar no terminal node.js
