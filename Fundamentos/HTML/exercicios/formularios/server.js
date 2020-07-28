@@ -8,7 +8,8 @@
  * 4. Configurar o servidor
  * 5. IMPORTANTE para funcionar preciso definir a porta listener usando:
  * app.listen(3003) 
- * 6. Colocar a porta para escutar e digitar no terminal node.js
+ * 6. Colocar a porta para escutar 
+ * 7. Acessar o diretório que /HTML/exercicios/formularios/ e digitar no terminal node server.js
  */
 
 

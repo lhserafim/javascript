@@ -11,6 +11,7 @@
  *  6.1. Passar a url: http://localhost:3003/produtos
  * 7. Instalar o parse, para poder executar no postman
  *  7.1. npm i --save body-parser@1.18.2 -E
+ * 8. node server.js
  */
 
 // Declarar uma porta

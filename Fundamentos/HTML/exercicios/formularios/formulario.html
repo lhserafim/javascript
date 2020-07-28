@@ -7,5 +7,50 @@ os dados preenchidos e submeter isso ele vai para o servidor -->
 
 <form action="http://localhost:3003/usuarios" method="post">
     <input type="text" name="nome">
+    <input type="password" name="senha">
+    <textarea name="bio" cols="30" rows="10"></textarea>
+
+    <div>
+        <input type="radio" name="tipo" value="admin"> Administrador
+        <input type="radio" name="tipo" value="regular"> Regular
+        <input type="radio" name="tipo" value="prof"> Professor
+    </div>
+    <div>
+        <input type="checkbox" name="check" value="ativo"> Ativo <!-- Se eu não colocar o value, o default é ON-->
+    </div>
+
+    <!-- Lista de valores -->
+    <select name="estado">
+        <option value="">Selecione o Estado</option>
+        <option value="sp">São Paulo</option>
+        <option value="rj">Rio de Janeiro</option>
+        <option value="mg">Minas Gerais</option>
+        <option value="es">Espírito Santo</option>
+    </select>
+
+    <!-- Lista de seleção múltipla -->
+    <select name="interesses" multiple size="8">
+        <option value="js">Javascript</option>
+        <option value="java">Java</option>
+        <option value="c">C</option>
+        <option value="c++">C++</option>
+        <option value="c#">C#</option>
+    </select>
+
     <button>Incluir</button>
+
 </form>
+
+<style>
+    input, textarea {
+        display: block;
+        margin-bottom: 10px;
+    }
+    input[type=radio], input[type=checkbox] {
+        display: inline;
+    }
+    select {
+        display: block;
+        margin-bottom: 10px;
+    }
+</style>
