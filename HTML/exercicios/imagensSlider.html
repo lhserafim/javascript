@@ -1,0 +1,97 @@
+<h1>Imagens</h1>
+
+<div wm-slider>
+    <p>
+        <img src="http://files.cod3r.com.br/curso-web/imagem1.jpg" 
+        alt="Muro da Cidade" 
+        width="513"
+        height="342"
+        title="Muro da Cidade por..">
+    </p>
+    <!-- alt é uma tag usada para auxiliar deficientes visuais e tbm quando a imagem não é carregada -->
+    
+    <p>
+        <img src="http://files.cod3r.com.br/curso-web/imagem2.gif" 
+        alt="Intro Cod3r">
+    </p>
+        
+    <p class="circular">
+        <img src="http://files.cod3r.com.br/curso-web/imagem3.png" 
+        alt="Rio de Janeiro"
+        width="342">
+    </p>
+    
+    <!-- Criando uma forma condicional de mostrawr imagens, de acordo com o tamanho da tela -->
+    <p>
+        <picture>
+            <source media="(min-width: 600px)" srcset="http://files.cod3r.com.br/curso-web/logo-larga.png">
+            <img src="http://files.cod3r.com.br/curso-web/logo-estreita.png" alt="logo">
+        </picture>
+    </p>
+</div>
+
+<!-- Imagens .png permitem efeito de transparência -->
+<style>
+    p {
+        position: absolute;
+        display: none;
+    }
+    .circular {
+        width: 513px;
+        background-color: #444;
+    }
+    .texto {
+        width: 400px;
+    }
+    .texto img {
+        margin-right: 10px;
+    }
+</style>
+
+
+<script>
+    function mover(elem, inicio, fim, passo, callback) {
+        const novoInicio = inicio - passo
+        if (novoInicio >= fim) {
+            elem.style.left = novoInicio + 'px'
+            // Usar temporizador para movimentar a imagem automaticamente
+            setTimeout(()=> mover(elem, novoInicio, fim, passo, callback), 7)
+        } else {
+            callback()
+        }
+    }
+    // const p = document.querySelector('[wm-slider] > p') // selecionar a primeira tag p
+    // p.style.display = 'block' //tornar visivel
+    // mover(p, 1500, -550, 5, () => {
+    //     console.log('Terminou!')
+    // })
+
+    function slider() {
+        const elementos = document.querySelectorAll('[wm-slider] > p')
+        // Transformar um  node list (que é o resultado do querySelectorAll) em um array
+        const slides = Array.from(elementos)
+        exibirSlide(slides, slides[0])        
+    }
+    function exibirSlide(slides, slide) {
+        slide.style.display = 'block'
+        // pegando o tamanho da janela do navegador atual
+        const inicio = innerWidth
+        // obter a largura da tag p
+        const fim = -slide.clientWidth
+
+        slide.style.left = `${inicio}px`
+        mover(slide, inicio, fim, 5, () => {
+            slide.style.display = 'none'
+            // fazer exbiri novamente para ficar em loop
+            exibirSlide(slides, getProximo(slides, slide))
+        })
+    }
+
+    function getProximo(lista, atual) {
+        const i = lista.indexOf(atual) + 1
+        return i < lista.length ? lista[i] : lista[0]
+    }
+
+    slider()
+
+</script>

@@ -1,0 +1,54 @@
+<h1>Imagens</h1>
+<p>
+    <img src="http://files.cod3r.com.br/curso-web/imagem1.jpg" 
+    alt="Muro da Cidade" 
+    width="513"
+    height="342"
+    title="Muro da Cidade por..">
+</p>
+<!-- alt é uma tag usada para auxiliar deficientes visuais e tbm quando a imagem não é carregada -->
+
+<p>
+    <img src="http://files.cod3r.com.br/curso-web/imagem2.gif" 
+    alt="Intro Cod3r">
+</p>
+
+<!-- Imagens .png permitem efeito de transparência -->
+<style>
+    .circular {
+        width: 513px;
+        background-color: #444;
+    }
+    .texto {
+        width: 400px;
+    }
+    .texto img {
+        margin-right: 10px;
+    }
+</style>
+
+<p class="circular">
+    <img src="http://files.cod3r.com.br/curso-web/imagem3.png" 
+    alt="Rio de Janeiro"
+    width="342">
+</p>
+
+<p class="texto">
+    <img src="http://files.cod3r.com.br/curso-web/avatar.jpg" 
+    alt="Avatar"
+    height="50"
+    align="right">
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa 
+    qui officia deserunt mollit anim id est laborum."
+</p>
+
+<!-- Criando uma forma condicional de mostrawr imagens, de acordo com o tamanho da tela -->
+<p>
+    <picture>
+        <source media="(min-width: 600px)" srcset="http://files.cod3r.com.br/curso-web/logo-larga.png">
+        <img src="http://files.cod3r.com.br/curso-web/logo-estreita.png" alt="logo">
+    </picture>
+</p>
