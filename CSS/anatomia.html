@@ -8,6 +8,19 @@
         /* O primeiro componente que temos dentro de uma tag style, que executa o css
          * É o SELETOR. O seletor pode estar chamando uma tag, classe ou ID, ou inclusíve conjunto de elementos 
          * ex.: Classes X contendo tags Y
+         * 
+         * SELETORES - Formas de seleção
+         * * - É um seletor universal, pegaria todos os elementos de uma página e aplica o estilo
+         * Elemento (h1, div, p, body, etc) - aplica o estilo a todos os elementos de mesma tag
+         * .class - Aplica o estilo aos elementos de mesma classe ( Caminho mais seguro!!! )
+         * #id - Aplica o estilo a um id específico
+         * [atributos] - Aplica o estilo aos atributos
+         *
+         * COMBINAR SELETORES
+         * div + p - Adjacente sibling - é um seguido do outro
+         * div ~ p - General sibling - irmão de mesmo pais
+         * div > p - Child - filho direto
+         * div p - Descendenant - Qualquer descendente
          */
          .selector {
              color: #222;
