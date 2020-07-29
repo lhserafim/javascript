@@ -5,11 +5,18 @@
     <meta charset="UTF-8">
     <title>Origem CSS: Externo, Interno e Inline</title>
     <style>
-        /* ... */
+        /* interno é colocado dentro da tag style */
+        body {
+            background-color: aquamarine;
+        }
     </style>
+    <!-- externo é colocado em um arquivo separado e chamado pelo link:css -->
+    <link rel="stylesheet" href="css/externo.css">
+    <!-- repare que tanto o interno quanto o externo fazem referencia a tag body. 
+    A ordem de preferencia é o último a ser lido será mantido -->
 </head>
-
-<body>
+<!-- inline. Não é uma boa prática. Inline é a maior preferencia, se definido SERÁ USADO -->
+<body style="background-color: coral;">
     <h1>E agora?</h1>
 </body>
 
