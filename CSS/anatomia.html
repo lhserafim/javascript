@@ -5,7 +5,38 @@
     <meta charset="UTF-8">
     <title>Anatomia CSS</title>
     <style>
-        /* ... */
+        /* O primeiro componente que temos dentro de uma tag style, que executa o css
+         * É o SELETOR. O seletor pode estar chamando uma tag, classe ou ID, ou inclusíve conjunto de elementos 
+         * ex.: Classes X contendo tags Y
+         */
+         .selector {
+             color: #222;
+             font-size: 30px;
+             text-align: center;
+             /* Multiplos valores */
+             border: solid 5px navy; /* shorthand property */
+             /* Alternativas. Carregue fonte A, caso não de certo carregue B */
+             font-family: Arial, Helvetica, sans-serif;
+             /* Chamando FUNÇÕES pré definidas em CSS */
+             width: calc(100% - 100px);
+             background-color: rgb(34, 153, 189);
+         }
+
+         /* Usando uma pseudo-classe. Usar : para acessar */
+         .selector:hover {
+             background-color: orangered;
+         }
+
+         /* Usando um pseudo-elemento. Usar :: para acessar */
+         .selector::first-letter {
+             font-size: 60px;
+             font-weight: bold;
+         }
+
+         /* Padrão de nomenclatura em CSS 
+          * usar o dash-case (por padrão)
+          */
+
     </style>
 </head>
 
