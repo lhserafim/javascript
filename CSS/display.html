@@ -6,6 +6,26 @@
     <title>Display</title>
     <style>
         /* ... */
+        body {
+            font-size:  40px;
+            color: #fff;
+            background-color: coral;
+        }
+        ul { padding: 0;}
+        div { background-color: seagreen;}
+        span {background-color: dodgerblue;}
+        li { background-color: purple;}
+
+        div, span, li {
+            width: 50%; /* Sempre que usamos % estamos se referindo a um valor relátivo */
+            width: 200px; /* Sempre que usamos px estamos se referindo a um valor absoluto */
+            height: 80px;
+            padding-top: 30px;
+            text-align: center;
+            display: block; /* Faz com que o elemento seja impresso em toda sua linha, mesmo que você não ocupe ela toda (pq vc definiu um width menor por ex.) */
+            display: inline; /* Faz com que os elementos fiquem na mesma linha. Mas ele não irá respeitar altura e largura */
+            display: inline-block; /* Mantem os elementos na mesma linha e ainda respeita as dimensões de alt e larg */
+        }
     </style>
 </head>
 
