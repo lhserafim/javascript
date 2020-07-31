@@ -7,8 +7,11 @@
         div {
             font-size: 40px;
             height: 100px;
-            width: 260px;
+            width: 260px; /* Aqui minha div vai estourar e dar overflow, pq usei valor largura fixo */
             border: solid 3px;
+            /* Estratégias para tratar o overflow */
+            overflow: hidden; /* Oculta tudo que estrapolar a div */
+            overflow: scroll; /* Cria barra de rolagem para o box da div */
         }
     </style>
 </head>
