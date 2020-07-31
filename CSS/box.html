@@ -6,6 +6,22 @@
     <title>Box Model</title>
     <style>
         /* ... */
+        body { font-size: 80px; margin: 0;}
+        .c1 { background-color: orange;}
+        .c2 { background-color: skyblue;}
+        .c3 { background-color: tomato;}
+        div {
+            float: left;
+            padding-top: 100px;
+            /* o padding é um shorthand pois permite informar de 1 à 4 valores para o atributo.
+             * SEMPRE iniciando pelo TOPO e sentido HORÁRIO. SE VC NÃO EXPLICITAR um dos 4 valores
+             * o CSS aplicará automaticamente o mesmo valor no atributo faltante. 
+             * Normalmente aplicando de 1, 2 ou 4 valores
+             */
+            padding: 10px 50px 100px 150px;
+            margin: 0px 20px;
+            border: solid 15px black;
+        }
     </style>
 </head>
 
