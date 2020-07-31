@@ -17,6 +17,19 @@
         span {
             background-color: dodgerblue;
         }
+
+        span, div {
+            width: 50%;
+            height: 50%;
+            /* height: 250px ; */
+        }
+        /* Em caso de elementos INLINE a altura e a largura são desconsideradas
+         * Dependendo da propriedade display, alt e largura também podem ser descondideradas
+         * Percentual, quando aplicamos a propriedade relativa %, este irá levar em consideração o PARENT e sua POSITION
+         * desta forma ao aplicar 50% de alt e largura em um elemento que pertence a uma body, podemos perceber um comportamento diferente
+         * pois o body não ocupa 100% da viewport verticalmente.
+         * Assim, dependendo da necessidade aplicamos o valor absoluto ou mexemos no parent para que o % seja aplicado corretamente
+         */
     </style>
 </head>
 
