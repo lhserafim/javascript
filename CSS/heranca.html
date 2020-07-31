@@ -5,13 +5,30 @@
     <meta charset="UTF-8">
     <title>Herança</title>
     <style>
-        /* ... */
+        /* Quando aplicamos um estilo a um elemento, naturalmente os elementos que pertencem
+         * a este elemento "pai" herdam o estilo que é APLICÁVEL, ou seja via cascata. 
+         * Inclusive isto é visível ao inspecionar o HTML.
+         * Neste exemplo, o atributo border NÃO É APLICÁVEL automaticamente via herança
+         * Ou seja ALGUMAS PROPRIEDADES NÃO VEM POR HERANÇA AUTOMATICAMENTE e quando desejado
+         * podemos explicitar que queremos herdar usando a propriedade inherit.
+         */
+         body {
+             font-family: monospace;
+             font-size: 40px;
+             border: solid 3px red;
+             padding: 50px;
+         }
+         div {
+             border: inherit;
+         }
     </style>
 </head>
 
 <body>
     <h1>Herança</h1>
-    <div>Estou herdando</div>
+    <div>Estou herdando
+        <span><p>Eu também herdei</p></span>
+    </div>
 </body>
 
 </html>
