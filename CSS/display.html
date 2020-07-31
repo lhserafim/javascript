@@ -25,6 +25,9 @@
             display: block; /* Faz com que o elemento seja impresso em toda sua linha, mesmo que você não ocupe ela toda (pq vc definiu um width menor por ex.) */
             display: inline; /* Faz com que os elementos fiquem na mesma linha. Mas ele não irá respeitar altura e largura */
             display: inline-block; /* Mantem os elementos na mesma linha e ainda respeita as dimensões de alt e larg */
+
+            /* COMPORTAMENTO ESTRANHO inline-block - Quando trabalhamos com o inline-block dependendo da aplicação ele coloca um caracter em branco entre
+             * os blocos. Desta forma precisamos removê-lo ou considerá-lo quando fazemos a nossa composição */
         }
     </style>
 </head>
