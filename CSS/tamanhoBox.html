@@ -4,8 +4,23 @@
     <meta charset="UTF-8">
     <title>Tamanho Box</title>
     <style>
+        * { /* Aplicando o box-sizing para todos os elementos da minha página. Seletor universal */
+            box-sizing: border-box; /* Vai fazer com que o meu conteúdo não estrapole o 100% de largura. 
+                                     * É como que se os elementos adicionados (padding e border) crescecem para dentro da caixa */
+        }
         body {
             font-size: 45px;
+            margin: 0;
+        }
+        div {
+            background-color: deepskyblue;
+            width: 100%;
+            height: 300px;
+            padding: 100px; 
+            border: solid 20px;
+            /* Até aqui, com os elementos acima o meu elemento ESTRAPOLOU o tamanho da tela, mesmo eu informando 100% de largura
+            * Isto pq o padding e a border são adicionados a minha conta. Este é o padrão chamado de box-sizing: content-box
+            */
         }
     </style>
 </head>
