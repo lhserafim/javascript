@@ -6,6 +6,68 @@
     <title>Position</title>
     <style>
         /* ... */
+        div {
+            font-size: 60px;
+            padding: 30px;
+            border: solid 5px #222;
+        }
+        .static {
+            /* Não preciso falar que a position é static, pois é o default */
+            top: 100px;
+            left: 100px; /* tanto o left quanto o top não serão considerados pois o Static ignora estes atributos */
+            background-color: steelblue;
+        }
+
+        .fixed  {
+            position: fixed;
+            bottom: 30px;
+            right: 0px;
+            background-color: tomato;
+        }
+        
+        .relative1 {
+            /* Vai levar em consideração o elemento anterior */
+            position: relative;
+            left: 50px;
+            top: 5px;
+            background-color: seagreen;
+        }
+        .absolute1 {
+            /* Como este elemento está no body, ele irá se posicionar de forma absoluta dentro da página, inclusive passando por cima de outros elementos */
+            position: absolute;
+            left: 350px;
+            top: 120px;
+            background-color: violet;
+        }
+        .relative2 {
+            position: relative;
+            left: 250px;
+            top: 2000px;
+            width: 200px;
+            height: 200px;
+            background-color: slategray;
+        }
+        
+        .absolute2 {
+            /* Este absolute está dentro de uma div relativa, então o comportamento vai mudar. 
+             * neste caso ele irá se comportar de forma ABSOLUTA em relação ao objeto PAI.
+             * CASO o objeto pai, deixe de ser relativo, o comportamento passa a ser absolute em relação a página
+            */
+            position: absolute;
+            left: 10px;
+            top: 10px; 
+            width: 20px;
+            height: 20px;
+            background-color: orange;
+        }
+        
+        .sticky {
+            /* Esta propriedade se assemelha a um cabeçalho fixo no excel. não importa o quano eu rolar a página, ele permanece no topo */
+            position: -webkit-sticky; /* Coloncando de uma forma que o safari entenda */
+            position: sticky;
+            background-color: #777;
+            top: 0px;
+        }
     </style>
 </head>
 
