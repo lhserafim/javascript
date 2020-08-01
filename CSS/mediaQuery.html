@@ -12,6 +12,29 @@
             border: solid 5px;
             display: none;
         }
+
+        /* @media tem relação com a responsividade do site. Eu posso definir um critério (max-width: por exemplo) e alguma classe CSS
+         * é aplicada quando esta condição é verdadeira. 
+         * Ou seja, o @media permite aplicar responsividade no site, uma vez que um CSS é aplicado mediante a uma condição verdadeira
+        */
+        @media (max-width: 600px) {
+            .muito-pequeno { 
+                display: block;
+            }
+        }
+        /* O exemplo abaixo é como se fosse um OU. 1000px OU portrait */
+        @media (max-width: 1000px), (orientation: portrait) {
+            .pequeno-retrato { 
+                display: block;
+            }
+        }
+
+        /* usando uma condicao AND como se fosse um between */
+        @media (min-width: 500px) and (max-width: 1000px) {
+            .intervalo {
+                display: block;
+            }
+        }
     </style>
 </head>
 <body>
