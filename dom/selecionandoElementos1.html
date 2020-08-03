@@ -10,7 +10,25 @@
     <div>Segundo</div>
     <div class="terceiro ultimo">.terceiro .ultimo</div>
     <script>              
-        // ...
+        // Selecionando um elemento pelo ID. Note que não precisei passar #, apenas o seu nome (id)
+        // O destaque é uma classe css criada em um arquivo css/estilo.css
+        document.getElementById('primeiro').classList.add('destaque')
+
+        // Agora vou selecionar os elementos div, para remover o destaque
+        // Importante, ele retorna um HTML COLLECTION não um array, por isso, será necessário transformar para array para ter acesso a todas as funçoes de array
+        const divs = document.getElementsByTagName('div')
+        // Uma vez selecionado, transformo em um array para poder trabalhar em cima
+        Array.from(divs).forEach(e => e.classList.remove('destaque'))
+
+        // Outro exemplo, agora usando spread e depois usando array p/ aplicar o destaque em todos os elementos
+        const divsArray = [...divs]
+        divsArray.forEach(e => e.classList.add('destaque'))
+
+        // Ultimo exemplo, selecionando a partir da classe
+        const ultimosElementos = document.getElementsByClassName('ultimo') // Aqui retorna uma HTMLCollectionOf
+        for(let e of ultimosElementos) {
+            e.classList.remove('destaque')
+        }
     </script>
 </body>
 </html>
