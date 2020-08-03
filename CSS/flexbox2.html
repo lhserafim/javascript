@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 
 <head>
@@ -7,6 +7,39 @@
     <link rel="stylesheet" href="css/tag.css">
     <style>
         /* ... */
+        .flex-container div {
+            box-sizing: border-box;
+        }
+        
+        .flex-container {
+            display: flex;
+            height: 300px;
+            width: 600px;
+        }
+
+        /* Vou aplicar uma propriedade no terceiro filho */
+        .flex-container div:nth-child(3) {
+            background-color: indianred;
+            order: -1; /* Todos os elementos tem a mesma ordem 0. Posso ajustar isto */ 
+            align-self: center; 
+            align-self: stretch;  
+        }
+
+        .flex-container div {
+            width: 100px;
+            flex-grow: 1; /* Vou usar o crescimento para ocupar todo o espaço do meu box  (padrão é 0) */
+        }
+
+        .flex-container div:nth-child(1) {
+            /* Aplicando um crescimento diferenciado em um dos elementos */
+            flex-grow: 2;
+        }
+
+        .flex-container {
+            width: 300px;
+            flex-shrink: 1; /* Vai encolher para caber no container */ 
+        }
+
     </style>
 </head>
 
