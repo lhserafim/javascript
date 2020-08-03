@@ -7,6 +7,34 @@
     <link rel="stylesheet" href="css/tag.css">
     <style>
         /* ... */
+        .big {
+            font-size: 1.5em;
+        }
+
+        .flex-container {
+            /* Flexbox é uma tecnologia unidimensional. Preciso definir o meu flex-direction se ele é H ou V */
+            display: flex; /* Estou dizendo que esta classe é um flexbox */ 
+            flex-direction: column; /* coloco os elementos em coluna (o padrão é row) */
+            flex-direction: column-reverse; /* vai inverter a ordem da coluna */
+            flex-direction: row-reverse;/* vai inverter a ordem da linha */
+            flex-direction: row;
+            width: 50%;
+            height: 200px;
+            flex-wrap: wrap; /* Uma forma de trabalhar com overflow, quebrar em 2 linhas */
+            flex-flow: column-reverse wrap;
+            flex-flow: row wrap;
+
+            justify-content: center;
+            justify-content: space-around;
+
+            /* Cross Axis */
+            height: 400px;
+            align-items: stretch;
+            align-items: center;
+
+            /* Mais de uma linha */
+            align-content: flex-start;
+        }
     </style>
 </head>
 
