@@ -7,7 +7,7 @@ const colors = {
     ol: '#fbc02d',
     header: '#d81b60',
     nav: '#64dd17',
-    main: '00acc1',
+    main: '#00acc1',
     footer: '#304ffe',
     form: '#9f6581',
     body: '#25b6da',

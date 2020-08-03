@@ -22,6 +22,23 @@
             border: solid 5px dodgerblue;
             background: #fff;
         }
+
+        body {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-template-columns: repeat(4, 8.33%);
+            grid-template-columns: 200px 20% 1fr; /* fr significa fragmentos */
+            grid-template-columns: 3fr 6fr 3fr; /* fr significa fragmentos */
+            grid-template-rows: 100px 1fr;
+        }
+
+        .d8 {
+            grid-column-start: 2;
+            grid-column-end: 4; 
+            grid-column-end: span 2; /* Vai dar o mesmo efeito (neste caso) do item acima */
+            grid-row-start: 3;
+            grid-row-end: 5;
+        }
     </style>
 </head>
 
