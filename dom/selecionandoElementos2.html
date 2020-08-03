@@ -10,7 +10,28 @@
     <div>Segundo</div>
     <div class="terceiro ultimo"><span wb-attrib>.terceiro .ultimo</span></div>
     <script>              
-        // ...
+        // Agora vou usar o querySelector, ele é mais flexível. NESTE CASO preciso pasar o # quando pesquisar por id
+        document.querySelector('#primeiro').classList.add('destaque')
+
+        // Criando uma função para selecionar os elementos (passado por parametro) 
+        // Neste caso, o querySelectorAll retorna uma nodelist, e NodeList suporta forEach
+        const selecionar = seletor => document.querySelectorAll(seletor).forEach(e => e.classList.add('destaque'))
+        
+        // Criando função para tirar o destaque
+        const deselecionar = seletor => document.querySelectorAll(seletor).forEach(e => e.classList.remove('destaque'))
+
+        // TESTANDO
+        selecionar('div')
+        deselecionar('*') // posso usar o seletor universal
+        selecionar('.terceiro.ultimo') // note que tirei o espaço entre terceiro e ultimo. Ou seja, passei as duas classes css jutas e com ponto
+        deselecionar('*')
+        selecionar(':not(#primeiro)') // pasasndo uma pseudo classe
+        deselecionar('*')
+        selecionar(':nth-child(1)') // selecionando o primeiro elemento filho
+        deselecionar('*')
+        selecionar('div:nth-of-type(1)') // selecionando o primeiro elemento do tipo div
+        deselecionar('*')
+        selecionar('[wb-attrib]') // selecionando a partir de um atributo personalizado
     </script>
 </body>
 </html>
