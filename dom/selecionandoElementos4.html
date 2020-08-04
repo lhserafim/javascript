@@ -22,7 +22,44 @@
         <p>Fim</p>
     </div>
     <script>
-        // ...
+        // Vou criar uma função para facilitar o uso do meu console.log, pois temos vários tipos de retorno (htmlcollection, nodelist, etc)
+        function log() {
+            // Não vou usar uma arrowfunction pois o this iria apontar para a window
+            console.log(this)
+        }
+        // Vou usar o prototype para adicionar novas funções aos elementos dos objetos
+        // Ou seja, vou adicionar a função log a todos estes objetos
+        HTMLCollection.prototype.log = log
+        HTMLElement.prototype = log
+        NodeList.prototype.log = log
+        Node.prototype.log = log
+
+        // Vou NAVEGAR pelos itens, usando next, last, previous, etc
+        const lista = document.querySelector('div ul')
+        // vou selecionar o elemento pai do elemento selecionado
+        // Aqui vale uma obs. o childNoddes vai trazer inclusie os textos no meio da lista (que correspondem as quebras da lista)
+        lista.parentNode.log() // Vai selecionar a div
+        lista.childNodes.log() // Aqui, como é uma lista, volta um text junto, pois foram dado enters ao criar a lista no html
+
+        const primeiro = lista.firstChild
+        primeiro.log() // vai pegar o text, pois ele é o primeiro elemento na lista (corresponde ao enter na quebra da lista)
+        primeiro.nextSibling.log() // agora vai pegar o primeiro elemento da lista
+        
+        const ultimo = lista.lastChild // Aqui tmb temos o problema de trazer o text
+        ultimo.log()
+        ultimo.previousSibling.log()
+
+        // Uma abordagem mais interessante, neste caso, para não trazer o text 
+        lista.children.log()
+        lista.firstElementChild.log()
+        lista.lastElementChild.log()
+        // Os dois exemplos abaixo não aparecem no autocompletar intellisense
+        lista.parentNode.previousElementSibling.log() 
+        lista.parentNode.nextElementSibling.log()
+
+        // Também posso usar a estratégia abaixo, que é mais simples e mais objetiva
+        document.querySelectorAll('div ul li').log()
+
     </script>
 </body>
 
