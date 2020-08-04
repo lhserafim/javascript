@@ -12,7 +12,36 @@
         Classes
     </div>
     <script>
-        // ...
+        // Usando o classList para poder manipular as classes de determinado elemento
+        const classes = document.querySelector('div').classList
+        classes.add('destaque')
+        classes.remove('destaque')
+        classes.toggle('destaque') // Funciona como um ON/OFF. Se está ON, muda para OFF
+        console.log(classes.contains('destaque')) // Verifico se a classe está contida
+        console.log(classes.length)
+        classes.toggle('destaque')
+        console.log(classes.length)
+
+        // Posso adicionar classes (mesmo que não existam, só para estar o length)
+        classes.add('destaque1')
+        classes.add('destaque2')
+        classes.add('destaque3')
+        console.log('tamanho:', classes.length)
+
+        // Parece um cursor no SQL, percorrendo todos os elementos de um select
+        for (let c of classes) {
+            console.log(c)
+        }
+        classes.forEach(c => console.log(c))
+
+        /*
+         * RESUMO
+         * 
+         * Nesta aula foi demonstrado como podemos usar o atributo classList para acessar as classes (CSS) de um determinado elemento 
+         * Capturando a classList, podemos manipular as classes associadas a um elemento. Posso adicionar, remover, alternar (toggle)
+         * Além disso, posso percorrer a constante gerada a partir da classList e verificar a lista de classes atribuidas a este elemento
+         *  
+         */
     </script>
 </body>
 
