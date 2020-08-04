@@ -16,7 +16,28 @@
         </ul>
     </div>
     <script>
-        // ...
+        const lista = document.querySelector('#compras')
+
+        // Quando uso o .attribute só posso fazer a leitura dos atributos, não posso alterá-lo
+        console.log(lista.attributes)
+        console.log(lista.attributes[0])
+        console.log(lista.attributes.id)
+        console.log(lista.attributes[1])
+        console.log(lista.attributes.destino)
+        console.log(lista.attributes[2])
+        console.log(lista.attributes['data-urgencia']) // não posso usar a notacao . pois o nome da variável tem - e JS interpreta como subtração
+
+        /*
+         * RESUMO
+         * Foram apresentadas mais algumas formas de acessar atributos de um HTML, utilizando JS
+         * Neste exemplo foram acessados os ATRIBUTOS PERSONALIZADOS através da notação . (ponto)
+         * 
+         * As ressalvas deste caso sao:
+         * 1. Não é permitido acessar um atributo personalizado cujo nome tenha - (hífen), utilizando a notação ponto. Usar colchetes para tal
+         * 2. Não é permitido alterar a propriedade de um atributo personalizado, acessando-o pela notação ponto
+         * 
+         */
+
     </script>
 </body>
 
