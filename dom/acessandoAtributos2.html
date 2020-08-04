@@ -17,7 +17,34 @@
         </ul>
     </div>
     <script>
-        // ...
+        // Aqui estou usando um seletor mais complexo, (que poderia ser substituido por id compras), mas para mostrar o poder do seletor
+        const lista = document.querySelector('div ul[destino="escritório"]') // div que tenha um filho ul e essa ul tenha o atributo personalizado destino='escritório'
+        console.log('Elemento "ul".....................')
+        console.log('childNodes', lista.childNodes)
+        console.log('destino', lista.destino) // Como é um atributo personalizado irá retornar undefined
+        console.log('getAttribute', lista.getAttribute('destino'))
+        console.log('hasAttribute', lista.hasAttribute('destino'))
+        // Alterando uma propriedade
+        lista.setAttribute('destino','empresa')
+        lista.setAttribute('status', 'aberto')
+        lista.removeAttribute('destino')
+        /*
+         * Atributos personalizados, como os 2 criados aqui: 
+         * destino='escritório' data-urgencia="5"
+         * podem ter diferença no seu uso pois o HTML "trata" de forma diferente quando iniciamos o nome do atributo personalizado com data-
+         */
+        console.log(lista.dataset.urgencia)
+        lista.dataset.urgencia = 4
+        console.log(lista.getAttribute('data-urgencia'))
+
+        // Cuidado
+        // Atributos personalizados que utilizam palavras reservadas eu preciso utilizar html antes do seu nome
+        const label = document.querySelector('label')
+        console.log(label.for) // Vai dar undefined pois for é uma palavra reservada
+        console.log(label.htmlFor) 
+        console.log(label.getAttribute('for'))
+
+        // De preferencia vou usar o getAttribute, pois ele é mais genérico
     </script>
 </body>
 
