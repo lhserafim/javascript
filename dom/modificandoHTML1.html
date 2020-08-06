@@ -9,7 +9,58 @@
 
 <body class='conteudo exercicio'>
     <script>
-        // ...
+        const body = document.querySelector('body')
+        
+        const div1 = document.createElement('div') // criando um elemento (div) dinâmicamente
+        div1.classList.add('destaque') // aplicando um estilo a esta classe
+        div1.innerHTML = 'Primeiro' // adicionando conteúdo a este elemento
+
+        const div2 = document.createElement('div')
+        div2.setAttribute('wm-atributo', 'valor')
+        div2.innerHTML = 'Segundo'
+
+        const p = document.createElement('p')
+        p.innerHTML = 'Terceiro'
+
+        const div3 = document.createElement('div')
+        div3.appendChild(p) // esta função vai inserir um elemento dentro de um elemento pai. Como é um append, vai inserir no final
+
+        // Fazendo os elementos "aparecerem no HTML". É necessário fazer o appendChild no body
+        body.appendChild(div1)
+        body.appendChild(div2)
+        body.appendChild(div3) // insere inclusive com o filho
+
+        // Agora um exemplo, inserindo um elemento filho, ANTES de algum outro elemento
+        const texto = document.createTextNode('Antes...') // poderia ter utilizado createElement também
+        div3.insertBefore(texto, div3.childNodes[0]) // passo o conteúdo que quero adicionar e ANTES DE QUAL childNode
+
+        // Clonando um elemento
+        const div4 = div3.cloneNode(true) // Se true, clona inclusive os descendentes!
+        body.appendChild(div4)
+
+        const div5 = div3.cloneNode(true) // Se true, clona inclusive os descendentes!
+        body.appendChild(div5) // As cores das divs estão sendo aplicadas de acordo com o CSS estilo.css, pela ORDEM
+        
+        // Não irá aplicar estilo, pois está fora da ordem (quantidade) prevista no CSS
+        const div6 = div3.cloneNode(true)
+        body.appendChild(div6)
+        
+        const div7 = div3.cloneNode(true)
+        body.appendChild(div7)
+
+        const div8 = div3.cloneNode(true)
+        body.appendChild(div8)
+
+        body.removeChild(div3) // removendo um elemento
+
+        /*
+         * RESUMO
+         * Nesta aula foi apresentado como manipular o HTML dinâmicamente, utilizando JS
+         * Note, que não tinhamos nada dentro do body e através de comandos de create, apend, insert e remove, foi possível manipular
+         * e ter acesso a todos os atributos do HTML
+         * Ainda foi utilizada uma classe CSS que permite aplicar estilo a div de acordo com sua ordem
+         */
+         
     </script>
 </body>
 
