@@ -9,9 +9,38 @@
 
 <body class="conteudo exercicio">
     <div>
-        <a href="https://google.com.br">Google</a>
+        <!-- Estratégia 1, colocando o onclick inline
+             vou adicionar o envento onclick para chamar a função criada 
+             esta é uma forma de fazer, mas não é a mais interessante se pensarmos em manutenção -->
+        <!-- <a href="https://google.com.br" 
+            onclick="navegarEm5s(event)">Google</a> Aqui preciso passar o parametro event, pois o browser tem esta variável -->
+            
+            <a meu-atributo-personalizado href="https://google.com.br">Google</a>
     </div>
     <script>
-        // ...
+        function navegarEm5s(e) { // o e é o apelido, poderia ser qualquer coisa
+            e.preventDefault() // Vou prevenir o comportamento padrão da ação, que aqui seria navegar para o Link
+            console.log('Saindo em 5s...')
+            setTimeout(() => {
+                const link = e.target // o target é um atributo do evento
+                window.location.href = link.href
+            }, 5000)
+        }
+        // Estratégia 2, colocando a chamada do onclick dentro do script
+        //const a = document.querySelector('a') // O problema da estratégia dois é que não fica claro quem está chamando quem, ou seja, não é TÃO legível
+        //a.onclick = navegarEm5s // Repare que aqui não passei o evento
+
+        // Estratégia 3, usando atributos personalizados + MELHOR. Fica mais legível e melhora a manutenção
+        const a = document.querySelector('[meu-atributo-personalizado]')
+        a.onclick = navegarEm5s
+
+        /*
+         * RESUMO
+         * Foram apresentadas 3 formas de capturar um evento (como o onclick) e associar a ele uma função JS
+         * As 3 alternativas tem entre sí diferenças de como chamar a função JS
+         * inline -> O código é mais legível mas a manutenção é mais complexa
+         * Selecionando um elemento -> Fácil manutenção, mas pouca legibilidade de código
+         * Selecionando um atributo personalizado -> Fácil manutenção e alta legibilidade
+         */
     </script>
 </body>
