@@ -10,6 +10,36 @@
 <body class="conteudo exercicio">
     <div>Elemento</div>
     <script>
-        // ...
+        // Criando um script para permitir movimentar os elementos na tela
+        const item = document.querySelector('div') // Captura a div que vou trabalhar
+        item.style.position = 'absolute' // para que o elemento possa se movimentar de form absoluta pela tela
+
+        // Criando uma função arrow para mover
+        item.onmousemove = e => {
+            const item = e.target // é a minha div que disparou o evento
+            item.style.cursor = 'move' // alterando o estilo do mouse 
+            if (e.buttons) { // esse if quer dizer (se e.buttons != de zero), pois o padrão é 0
+                // Qual é a distância desta div (item) para o topo
+                // vai ser onde o mouse está (e.clientY)
+                // menos a metade da altura
+                // Essa continha é para que o cursor do mouse sempre fique no meio da div
+                item.style.top = `${e.clientY - (item.clientHeight / 2)}px` // vertical
+                item.style.left = `${e.clientX - (item.clientHeight / 2)}px` // horizontal
+            }
+            /*
+             * RESUMO
+             * Antes de começar, uma coisa importante de ressaltar é que estamos trabalhando com o padrão de projeto OBSERVER
+             * Ou seja, temos um listener, eventos registrados, solicitantes, todos os elementos deste padrão
+             * Na aula foi apresentado como movimentar um elemento na tela
+             * Foi selecionada a div, alterada o posicionamento da div para absolute para que ela tivesse flexibilidade para navegar por toda a tela
+             * e criada uma arrow function para ser disparada no evento do mouse e reposicionar a div na tela
+             * Trocando em míudos, quando o mouse é clicado ele seta dinamicamente 2 propriedades da div (top e left) e é por isso que a mesma é reposicionada
+             * Exemplo:
+             * Ao entrar na tela a div está assim:
+             * <div style="position: absolute;">Elemento</div>
+             * ao posicionar o mouse em cima e clicar a function arrow é acionada e seta a propriedade de acordo com a posição do mouse (clientY e clienteX)
+             * <div style="position: absolute; cursor: move; top: 153.5px; left: 609.5px;">Elemento</div>
+             */
+        }
     </script>
 </body>
