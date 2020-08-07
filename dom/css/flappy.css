@@ -26,7 +26,7 @@
     width: 60px;
     /* vou posicionar o passarinho no centro da tela, com esta conta */
     left: calc(50% - 30px); /* Posso executar funções do css */
-    bottom: 50%;
+    /* bottom: 50%; */
 }
 
 .par-de-barreiras {
