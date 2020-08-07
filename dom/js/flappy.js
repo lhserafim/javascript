@@ -59,5 +59,46 @@ function ParDeBarreiras(altura, abertura, x) {
     this.setX(x)
 }
 
-const b = new ParDeBarreiras(500, 200, 400)
-document.querySelector('[wm-flappy]').appendChild(b.elemento)
+// const b = new ParDeBarreiras(500, 200, 400)
+// document.querySelector('[wm-flappy]').appendChild(b.elemento)
+
+// Criando uma função construtora
+// As barreiras, inicialmente, estarão fora da área do jogo
+// O passarinho fica fixo, no centro da tela e as barreiras que se movimentam. Estarei trabalhando com 4 barreiras, em loop
+function Barreiras(altura, largura, abertura, espaco, notificarPonto) { // o parametro notificarPonto é uma função
+    this.pares = [
+        new ParDeBarreiras(altura, abertura, largura),
+        new ParDeBarreiras(altura, abertura, largura + espaco),
+        new ParDeBarreiras(altura, abertura, largura + espaco * 2),
+        new ParDeBarreiras(altura, abertura, largura + espaco * 3)
+    ]
+
+    const deslocamento = 3
+    this.animar = () => {
+        this.pares.forEach(par => {
+            par.setX(par.getX() - deslocamento)
+
+            // Quando o elemento sair da área do jogo, calcular e colocá-lo do outro lado da tela para aparecer novamente
+            if (par.getX() < -par.getLargura()) {
+                par.setX(par.getX() + espaco * this.pares.length)
+                par.sortearAbertura()
+            }
+
+            // Verificar se barreira cruzou o meio, se sim, pontuar
+            const meio = largura / 2
+            const cruzouOMeio = par.getX() + deslocamento >= meio && par.getX() < meio
+            // Uma forma de fazer um if (reduzido)
+            // Se cruzouOMeio (verdadeiro) executar o notificarPonto()
+            // se cruzouOMeio (falso) não vai executar a segunda parte
+            cruzouOMeio && notificarPonto() // igual a fazer isso:  if (cruzouOMeio) notificarPonto
+            
+        })
+    }
+}
+
+const barreiras = new Barreiras(500, 1200, 200, 400)
+const areaDoJogo = document.querySelector('[wm-flappy]')
+barreiras.pares.forEach(par => areaDoJogo.appendChild(par.elemento))
+setInterval(() => {
+    barreiras.animar()
+}, 20)
