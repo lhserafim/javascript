@@ -151,6 +151,33 @@ function Progresso() {
 //     passaro.animar()
 // }, 20)
 
+// Validar se houve sobreposição
+function estaoSobrepostos(elementoA, elementoB) {
+    const a = elementoA.getBoundingClientRect() // pegando o retangulo associado ao elemento A 
+    const b = elementoB.getBoundingClientRect()
+
+    // Fazendo os cálculos H e V para verificar se houve sobreposição, ou seja, colisão
+    const horizontal = a.left + a.width >= b.left
+        && b.left + b.width >= a.left
+    const vertical = a.top + a.height >= b.top
+        && b.top + b.height >= a.top
+    return horizontal && vertical      
+}
+
+// Criando função para pegar as colisões
+function colidiu(passaro, barreiras) {
+    let colidiu = false
+    barreiras.pares.forEach(ParDeBarreiras => {
+        if (!colidiu) {
+            const superior = ParDeBarreiras.superior.elemento
+            const inferior = ParDeBarreiras.inferior.elemento
+            colidiu = estaoSobrepostos(passaro.elemento, superior)
+                || estaoSobrepostos(passaro.elemento, inferior)
+        }
+    })
+    return colidiu
+}
+
 function FlappyBird() {
     let pontos = 0
 
@@ -172,6 +199,10 @@ function FlappyBird() {
         const temporizador = setInterval(() => {
             barreiras.animar()
             passaro.animar()
+
+            if (colidiu(passaro, barreiras)) {
+                clearInterval(temporizador)
+            }
         }, 20)
     }
 }
