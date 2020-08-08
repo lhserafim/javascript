@@ -11,6 +11,63 @@
     <h1>Estados</h1>
 
     <script>
-        // ...
+        // IMPORTANTE! Este exemplo a implementação É BEM MANUAL, tem carater de ensinamento. Usando os frameworks modernos, não precisamos implementar
+        // tudo isso na mão!!
+
+        // Vou criar uma função para reutilizar dentro do meu projeto
+        // Esta função está recebendo um objeto, que vai representar as configurações. Neste objeto teremos URL, MÉTODO, ETC
+        function ajax(config) {
+            const xhr = new XMLHttpRequest()
+            xhr.open(config.metodo, config.url, true) // estou esperando receber a url no objeto config, que recebo via argumento
+
+            xhr.onload = e => {
+                if (xhr.status === 200) { // sucesso
+                    config.sucesso(xhr.response)
+                } else if (xhr.status >= 400) { // erro
+                    config.erro({
+                        codigo: xhr.status,
+                        texto: xhr.statusText
+                    })
+                }
+            }
+            xhr.send() // é a função que de fato irá enviar a requisição
+        }
+
+        // Estou chamando a função criada ajax. Como passei um objeto como parametro, faço a passagem dos atributos deste objeto
+        ajax({
+            url: "dados/estados.json",
+            metodo: "get",
+            sucesso(resposta) { // repare que o atributo sucesso é uma função expressa
+                const estados = JSON.parse(resposta)
+
+                // Em cima da minha lista de estados (que é o arquivo estados.json), vou construir a minha tabela aqui na DOM
+                const linhas = estados.map(estado => { // o map serve para transformar um array de uma coisa em um array de outra
+                    const tdId = document.createElement('td')
+                    tdId.innerHTML = estado.id
+
+                    const tdNome = document.createElement('td')
+                    tdNome.innerHTML = estado.nome
+
+                    const tdSigla = document.createElement('td')
+                    tdSigla.innerHTML = estado.sigla
+
+                    const tr = document.createElement('tr')
+
+                    tr.appendChild(tdId)
+                    tr.appendChild(tdNome)
+                    tr.appendChild(tdSigla)
+
+                    return tr
+                })
+
+                const tabela = document.createElement('table')
+                linhas.forEach(linha => tabela.appendChild(linha)) // Adicionar as linhas que eu criei na func anterior na tabela
+                document.body.appendChild(tabela) // adicionando a tabela no body
+            },
+            erro(e) {
+                const msg = document.createTextNode(`${e.codigo}: ${e.texto}`)
+                document.body.appendChild(msg)
+            }
+        })
     </script>
 </body>

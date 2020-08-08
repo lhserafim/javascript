@@ -19,6 +19,6 @@ app.use('/teste', bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json()) // Ou seja, se vier um Json dentro da requisição, este é o bodyParser que será aplicado
 
 // Quando vier uma requisição, nesta URL, do tipo GET, retornar OK. Também é um middleware
-app.get('/teste', (req, res) => res.send('Ok'))
+app.get('/teste', (req, res) => res.send(new Date()))
 
 app.listen(8080, () => console.log('Executando...'))
