@@ -11,6 +11,17 @@
     <h1>Estados</h1>
 
     <script>
-        // ...
+        // Fetch é um substituto moderno para o XMLHttpRequest
+        const url = 'dados/estados.json'
+        fetch(url) 
+            .then(resp => resp.json()) // Ele retorna p/ mim uma promise
+            .then(estados => { // graças a chamada anterior, aqui eu já tenho o json convertido
+                const itens = estados.reduce(
+                    (html, estado) => html + `<li>${estado.nome}</li>`, '' // passando um valor inicial vazio, para fazer as concatenaçoes de forma correta
+                )
+                document.body.insertAdjacentHTML('beforeend', `<ul>${itens}</ul>`)
+
+            })
+        
     </script>
 </body>
