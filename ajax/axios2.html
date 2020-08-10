@@ -14,6 +14,24 @@
     <div id="post"></div>
 
     <script>
-        // ...
+        // Criando função para converter e exibir o resultado
+        function exibirResultado(id, dados) {
+            const texto = JSON.stringify(dados)
+            document.getElementById(id).innerHTML = texto
+        }
+        // forma reduzida - passando parametros como objeto
+        // axios('parOuImpar?numero=10').then(resp => exibirResultado('get', resp.data))
+
+        axios.get('parOuImpar', {
+            params: {
+                numero: 5
+            }
+        }).then(resp => exibirResultado('get', resp.data))
+
+        // Exemplo de post
+        axios.post('formulario', {
+            nome: 'João',
+            sobrenome: 'Silva'
+        }).then(resp => exibirResultado('post', resp.data))
     </script>
 </body>

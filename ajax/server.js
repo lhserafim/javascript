@@ -58,6 +58,19 @@ app.post('/formulario', (req, res) => {
 
 })
 
+// Criando backend para o metodo get do exercício 2 de axios
+app.get('/parOuImpar', (req, res) => {
+    // Dentro do express existem ALGUMAS formas de vc receber dados do frontend
+    // req.body
+    // req.query
+    // req.params (/:algumaCoisa)
+
+    const par = parseInt(req.query.numero) % 2 === 0 
+    res.send({
+        resultado: par ? 'par' : 'impar'
+    })
+})
+
 // Quando vier uma requisição, nesta URL, do tipo GET, retornar OK. Também é um middleware
 app.get('/teste', (req, res) => res.send(new Date()))
 
