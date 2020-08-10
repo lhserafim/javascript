@@ -5,13 +5,22 @@
     <meta charset='UTF-8'>
     <title>Axios #01</title>
     <link rel='stylesheet' href='css/estilo.css'>
-    <script src="js/axios.js"></script>
+    <script src="js/axios.js"></script> <!-- Referencia p/ o arquivo axios -->
 </head>
 
 <body class="conteudo exercicio">
     <h1>Estados</h1>
 
     <script>
-        // ...
+        // Axios é muito usado com React
+        const url = 'dados/estados.json'
+        axios(url)
+            .then(resp => { // o JSON já vem convertido, ou seja, tem 1 etapa a menos que o fetch
+                const itens = resp.data.reduce(
+                    (html, estado) => html + `<li>${estado.nome}</li>`, '' // passando um valor inicial vazio, para fazer as concatenaçoes de forma correta
+                )
+                document.body.insertAdjacentHTML('beforeend', `<ul>${itens}</ul>`)
+
+            })
     </script>
 </body>
