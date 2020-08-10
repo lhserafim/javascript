@@ -5,7 +5,7 @@
     <meta charset='UTF-8'>
     <title>Ajax com jQuery</title>
     <link rel='stylesheet' href='css/estilo.css'>
-    <script src="js/jquery.js"></script>
+    <script src="js/jquery.js"></script> <!-- Estou importando o jQuery-->
 </head>
 
 <body class="conteudo exercicio">
@@ -14,6 +14,38 @@
     <div id="post"></div>
 
     <script>
-        // ...
+        // Neste Exemplo vamos trabalhar com callback
+
+        // Criando função para converter e exibir o resultado
+        function exibirResultado(id, dados) {
+            const texto = JSON.stringify(dados)
+            document.getElementById(id).innerHTML = texto
+        }
+
+         // $ = jQuery
+         $.ajax({
+             url: 'parOuImpar',
+             data: {
+                 numero: 5
+             },
+             success(data) {
+                 exibirResultado('get', data)
+             }
+         })
+
+         $.ajax({
+             url: 'formulario',
+             method: 'post',
+             data: {
+                 nome: 'João',
+                 sobrenome: 'Silva'
+             },
+             success(data) {
+                 exibirResultado('post', data)
+             },
+             error(e) {
+                 exibirResultado('post', e) // coloquei o objeto inteiro
+             }
+         })
     </script>
 </body>
