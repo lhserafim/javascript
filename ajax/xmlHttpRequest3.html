@@ -11,6 +11,43 @@
     <h1>Estados</h1>
 
     <script>
-        // ...
+        function ajax(config) {
+            const xhr = new XMLHttpRequest()
+            xhr.open(config.metodo, config.url, true)
+
+            xhr.onreadystatechange = e => {
+                if (xhr.readyState === 4) { // 4: request finished and response is ready // https://www.w3schools.com/js/js_ajax_http_response.asp
+                    if (xhr.status === 200) {
+                        config.sucesso(xhr.responseXML)
+                    } else if (xhr.status >= 400) {
+                        config.erro({
+                            codigo: xhr.status,
+                            texto: xhr.statusText
+                        })
+                    }
+
+                }
+            }
+            xhr.send() // quando é uma req do tipo GET não passo parâmetros
+        }
+
+        ajax({
+            url: "dados/estados.xml",
+            metodo: "get",
+            sucesso(resposta) {
+                const estados = resposta.getElementsByTagName('estado')
+                // Converti a minha const estados p/ um array
+                const itens = Array.from(estados).reduce( // usando o reduce p/ transformar meu array em um único elemento do tipo string
+                    //html aqui tem o papel de acumulador
+                    (html, estado) => html + `<li>${estado.attributes.nome.value}</li>`, '' // passando um valor vazio para iniciar a minha reduce
+                )
+                // Antes de terminar o body, eu insiro os meus itens
+                document.body.insertAdjacentHTML('beforeend', `<ul>${itens}</ul>`)
+            },
+            erro(e) {
+                const msg = document.createTextNode(`${e.codigo}:${e.texto}`)
+                document.body.appendChild(msg)
+            }
+        })
     </script>
 </body>
