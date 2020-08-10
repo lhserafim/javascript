@@ -22,6 +22,38 @@
     <div class="progresso"></div>
 
     <script>
-        // ...
+        function ajaxUpload(config) { // recebe um objeto
+            const xhr = new XMLHttpRequest()
+
+            if (xhr.upload) {
+                xhr.upload.onprogress = e => {
+                    // mapear o progresso
+                    const atual = e.loaded
+                    const total = e.total
+                    const percentual = Math.floor(atual /  total * 100) // Calcular p/ recuperar o percentual
+                    config.progresso({atual, total, percentual})
+                }
+            }
+            xhr.open("post", config.url, true)
+            xhr.send(config.formData)
+        }
+        // Quero que no momento em que eu selecionar o arquivo ele começe o Upload e para isso, tenho que monitorar
+        // o evento onchange
+        document.querySelector('input[type=file]').onchange = e => { // Selecionando os elementos input que contenham type=file
+            const formData = new FormData()
+            const inputFile = e.target
+            console.log(inputFile)
+            formData.append(inputFile.name, inputFile.files[0])
+
+            ajaxUpload({
+                url: "upload",
+                formData: formData,
+                // função progresso
+                progresso(dados) {
+                    const progresso = document.querySelector('.progresso')
+                    progresso.innerHTML = JSON.stringify(dados)
+                }
+            })
+        }
     </script>
 </body>

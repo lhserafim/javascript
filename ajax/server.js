@@ -18,6 +18,37 @@ app.use('/teste', bodyParser.urlencoded({extended: true}))
 */
 app.use(bodyParser.json()) // Ou seja, se vier um Json dentro da requisição, este é o bodyParser que será aplicado
 
+// CONFIGURAÇÃO NO SERVIDOR P/ UPLOAD DE ARQUIVO
+
+// Requerer o multer, que vai interpretar o formulário do arquivo de upload
+const multer = require('multer')
+
+// Definir as regras de diretório de destino e nome de arquivo
+const storage = multer.diskStorage({
+    destination: function (req, file, callback) {
+        callback(null,'./upload') // Salvar no diretório atual ('.')
+    },
+    filename: function(req, file, callback) {
+        callback(null,`${Date.now()}_${file.originalname}`) // colocando a data (em milisegundos) no nome do arquivo
+    }
+})
+
+// passando a storage, definida anteriormente para o construtor do multer
+const upload = multer({storage}).single('arquivo') // nome do 'arquivo' que virá na requisição. Está na name do elemento input
+
+// Disponibilizo uma rota para este método post e trato a callback
+app.post('/upload', (req, res) => {
+    upload(req, res, err => {
+        if (err) {
+            return res.end('Ocorreu um erro.')
+        }
+
+        res.end('Concluído com sucesso.')
+    })
+})
+
+// FIM DA CONFIGURAÇÃO P/ UPLOAD DE ARQUIVO
+
 // Quando vier uma requisição, nesta URL, do tipo GET, retornar OK. Também é um middleware
 app.get('/teste', (req, res) => res.send(new Date()))
 
