@@ -30,5 +30,40 @@
     <div id="resultado"></div>
     <script>
         // ...
+        document.usuarioForm.onsubmit = async e => {
+            e.preventDefault()
+
+            const form = e.target
+            const data = new FormData(form) // Pega todos os dados preenchidos e passa para a const data
+            // Vou adicionar um elemento só para "brincar"
+            data.append('ajax', true)
+
+            const options = {
+                method: form.method,
+                body: new URLSearchParams(data)
+            }
+
+            const resultado = document.getElementById('resultado')
+            // Forma 1: Usando fetch (com promise)
+            // fetch(form.action, options) // função fetch retorna um promise
+            //     .then(resp => resp.json())
+            //     .then(json => {
+            //         resultado.innerHTML = JSON.stringify(json)
+            //     })
+            //     // Adicionando tratamento de erros
+            //     .catch(e => {
+            //         resultado.innerHTML = e // recebe o erro
+
+            //     })
+
+            // Forma 2, usando async await
+            try {
+                const resp = await fetch(form.action, options)
+                const json = await resp.json()
+                resultado.innerHTML = JSON.stringify(json)
+            } catch (e) {
+                resultado.innerHTML = e
+            }
+        }
     </script>
 </body>

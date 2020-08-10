@@ -49,6 +49,15 @@ app.post('/upload', (req, res) => {
 
 // FIM DA CONFIGURAÇÃO P/ UPLOAD DE ARQUIVO
 
+// Criando backend p/ utilizar o formulário via fetch
+app.post('/formulario', (req, res) => {
+    res.send({ // Criando um objeto
+        ...req.body, // usando o spread, tudo que vier como resposta eu vou jogar neste objeto que está respondendo para o frontend
+        id: 1 // id é só para simular um ID de banco de dados
+    })
+
+})
+
 // Quando vier uma requisição, nesta URL, do tipo GET, retornar OK. Também é um middleware
 app.get('/teste', (req, res) => res.send(new Date()))
 
