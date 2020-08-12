@@ -1,0 +1,22 @@
+Configuração inicial p/ utilizar o GULP
+1. Abrir o terminal
+2. Acessar o diretório do gulp
+3. No arquivo package.json, adicionar as dependências:
+    3.1. 
+    "devDependencies": {
+        "babel-core": "6.26.3",
+        "babel-preset-env": "1.6.1",
+        "gulp": "4.0.2",
+        "gulp-babel": "7.0.1",
+        "gulp-concat": "2.6.1",
+        "gulp-sass": "4.0.1",
+        "gulp-typescript": "4.0.2",
+        "gulp-uglify": "3.0.0",
+        "gulp-uglifycss": "1.0.9",
+        "typescript": "2.8.3"
+    }
+4. Instalar as dependências: npm i
+    4.1. Verificar se a pasta node_modules foi criada
+5. Instalar o gulp no terminal
+    5.1. No terminal, digitar: sudo npm i -g gulp-cli
+    5.2. Validar instalação: gulp --version
