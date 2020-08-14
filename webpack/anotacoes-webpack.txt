@@ -1,0 +1,32 @@
+Configuração inicial do webpack
+
+1. Criar o diretório do webpack
+2. No terminal, acessar o diretório criado (webpack) e criar o arquivo package.json, digitando: npm init -y
+3. Abrir o arquivo package.json e fazer as alterações:
+    3.1. Para evitar conflitos, alterar o "name": "webpack" para um nome desejado
+    3.2. Em script, colocar:
+        "scripts": {
+            "start": "webpack"
+        }
+    3.3. Criar as dependências de desenvolvimento:   
+        "devDependencies": {
+            "webpack": "4.8.1",
+            "webpack-cli": "2.1.3"
+        }
+4. Voltar no terminal e digitar: npm i, para instalar as devDependencies
+5. Criar uma nova pasta dentro de webpack, src e dentro o arquivo pessoa.js e principal.js
+6. Criar um aquivo, dentro de webpack, de nome webpack.config.js
+    6.1. Digitar:
+        const webpack = require('webpack')
+
+        module.exports = {
+            mode: 'development',
+            entry: './src/principal.js'
+            output: {
+                filename: 'principal.js',
+                path: __dirname + '/public'
+            }
+        }
+    6.2. Após configurar o arquivo, no terminal digitar: npm start
+    6.3. Serão criados 1 pasta (dist) e dentro dela o arquivo main.js
+7. Para testar as configurações e rodar o arquivo digitar no terminal: npm start && node dist/main.js
