@@ -1,5 +1,6 @@
 import Pessoa from './pessoa'
-import './assets/css/estilo.css'
+//import './assets/css/estilo.css'
+import './assets' // ao invés da linha de cima. Isso irá ler o arquivo assets/index.js
 // Para eu importar o meu CSS, eu preciso ter o arquivo devidamente criado (conforme mapeado no import acima)
 // Configurar o meu webpack.config.js
 /**
@@ -21,6 +22,8 @@ import './assets/css/estilo.css'
  */
 
  // Ao final, será injetado o css no meu arquivo public/principal.js
+
+
 
 const atendente = new Pessoa
 console.log(atendente.cumprimentar() )
