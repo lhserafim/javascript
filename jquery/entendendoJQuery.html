@@ -14,6 +14,33 @@
     <div>2</div>
 
     <script>
-        // ...
+        // Para ter o jQuery dentro do meu projeto, preciso baixá-lo. Aqui foi baixando o arquivo minificado e referenciado no meu
+        // src acima.
+        // jQuery = $ , posso usar ambos
+
+        // Usando o jQuery com um seletor de div, para esconder as div's em 5 segundos
+        // jQuery permite trabalhar com um conjunto de objetos (é pensado p/ isso). Aqui no exemplo, ele vai esconder 2 divs
+        // e depois fazer aparecer 2 divs
+        // repare que tmb faço encadeamento de chamadas
+        $('div').hide(5000).show(5000).fadeOut(5000)
+        
+        /* IMPORTANTE
+         O jQuery não retorna os elementos da DOM, ele retorna os elementos DECORADOS (padrão de projeto decorated).
+         Ou seja, vc está trabalhando em objetos decorados, e não manipulando a DOM
+        */
+        console.log($('div').get(0)) // Para pegar o nó da DOM, preciso dar um .get()
+        
+        // Alguns exemplos de funções utilitárias do jQuery
+        console.log($.isEmptyObject({})) // Retorna TRUE, pois o objeto é vazio
+        console.log(jQuery.inArray(3, [1,2,3])) // Volta a posição do número 3 no array
+        
+        // Posso extender o jQuery muito facilmente, ou seja, posso criar funções próprias. Exemplo
+        $.fn.fundoVerde = function () {
+            this.css('background-color','green')
+            return this // colocando o return this, eu permito o encadeamento de funções, como o exemplo abaixo de fadeOut
+        }
+
+        $('body').fundoVerde().fadeOut(5000)
+        
     </script>
 </body>
