@@ -13,13 +13,40 @@
     <div id='conteudo'></div>
 
     <script>
-        const pessoas = [
-            { nome: 'Ana', nota: 9.1 },
-            { nome: 'Bianca', nota: 8.4 },
-            { nome: 'Carlos', nota: 7.6 },
-            { nome: 'Julia', nota: 9.7 }
-        ]
-        
-        // ...
+        // Criar uma tabela, a partir do array de pessoas acima, com 2 colunas, nome e nota
+
+        // Dica importante. É comum colocarmos o nosso código jQuery dentro de uma função .ready
+        // desta forma tiramos o nosso código do escopo global, e garantimos que ele só será executado quando a página estiver pronta (carregada)
+        $(document).ready(function() {
+            const pessoas = [
+                { nome: 'Ana', nota: 9.1 },
+                { nome: 'Bianca', nota: 8.4 },
+                { nome: 'Carlos', nota: 7.6 },
+                { nome: 'Julia', nota: 9.7 }
+            ]
+            // Para percorrer as linhas do meu array (pessoas), usar a função map         
+            const linhas = pessoas.map(p => {
+                // Aqui vou transformar meu objeto em linhas
+                const tdNome = $('<td>').html(p.nome)
+                const tdNota = $('<td>').html(p.nota)
+                //return $('<tr>').append(tdNome).append(tdNota) // OU
+                //return $('<tr>').append([tdNome, tdNota]) // OU
+                return $('<tr>').append(tdNome, tdNota)
+            })            
+            // Criando o elemento <table> e apendando as linhas e colocando estilo
+            const tabela = $('<table>').append(linhas).css('border', 'solid 5px')
+                
+            // Adicionando a minha DOM
+            $('#conteudo').append(tabela)            
+                
+            /* Vai montar dinamicamente assim!
+            <table style="border: 5px solid;">
+                <tr>
+                    <td>Ana</td>
+                    <td>9.1</td>
+                </tr>
+            </table>
+            */
+        })
     </script>
 </body>
