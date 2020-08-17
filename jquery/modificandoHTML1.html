@@ -13,8 +13,41 @@
     <div id='conteudo1'></div>
     <div id='conteudo2'></div>
     <div id='conteudo3'></div>
+    <div>Sem ID!</div>
 
     <script>
-        // ...
+        // Selecionando o conteúdo 1, pelo ID e adicionando um parágrafo
+        $('#conteudo1').append('<p>1</p>')
+
+        // Conteúdo 2
+        const elementos = [ // Criando os elementos p/ serem inseridos posteriormente na DOM
+            // IMPORTANTE!! 
+            // $('li') -- ISSO É UM SELETOR
+            // $('<li>') -- ISSO É CRIAR UM ELEMENTO!
+            $('<li>').append('Arroz'), 
+            $('<li></li>').append('Feijão'), // também posso criar desta forma
+            $('<li>').append('Carne')
+        ]
+        // Adicionando a lista de elementos acima, na lista abaixo, antes do elemento (prepend)
+        const lista = $('<ul><li>Sorvete</li><ul>').prepend(elementos) //append(elementos)
+        // Inserindo na DOM
+        $('#conteudo2').append(lista)
+
+        // Conteudo 3
+        $('#conteudo3').append(['<h1>1</h1>', '<h1>2</h1>'])
+            .prepend('<h1>0</h1>')
+        // Ficou uma lista
+        // 0
+        // 1
+        // 2
+
+        // o .html, é diferente do append e prepend, ele SUBSTITUI os elementos
+        $('#conteudo3').html('<h1>123</h1>') // Coloca como HTML, ou seja, sem o elemento <h1>
+        // o .text coloca como texto dentro da div
+        $('#conteudo3').text('<h1>123</h1>') // Ficou como texto, inclusive com o elemento <h1>
+
+        // Alterando todos elementos da div, com id
+        $('div[id]').css('border', 'solid 3px yellow')
+
     </script>
 </body>
