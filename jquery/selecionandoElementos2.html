@@ -82,5 +82,49 @@
     </footer>
     <script>
         // ...
+        const comBorda = { 'border': 'solid 8px orange' }
+        const semBorda = { 'border': 'none' }
+
+        // Selecionando o pai do link (neste caso é o li) // poderia selecionar assim: li:nth-child(3)
+        $('a[href="#link3"]').parent().css(comBorda).css(semBorda) 
+        console.log($('a[href="#link3"]').parent()) 
+        /* volta assim
+        w // Como é um decorator, volta com este W
+            <li style="border: 8px solid orange;">
+                        <a href="#link3">Link 3</a>
+            </li>
+        */
+        console.log($('a[href="#link3"]').parent().get(0)) // volta assim
+        /* volta assim
+        // Sem W, precisa do get(posicao)
+            <li style="border: 8px solid orange;">
+                        <a href="#link3">Link 3</a>
+            </li>
+        */
+
+        $('li:last').prev().css(comBorda).css(semBorda)
+        $('a[href="#link3"]').parent().next().css(comBorda).css(semBorda) // vai pegar o link4
+        $('a[href="#link1"]').parents().css(comBorda).css(semBorda) // Usando parents(), que vai selecionar TODOS OS PAIS do elemento
+        $('a[href="#link1"]').parentsUntil($('body')).css(comBorda).css(semBorda)  // Vai selecionar até o pai determinado (aqui o body)
+        $('main').children().css(comBorda).css(semBorda) // todos os filhos de um determinado elemento
+        $('body').find('a').css(comBorda).css(semBorda) // Todos os elementos a do elemento body
+
+        // SELECIONANDO UM ELEMENTO DA DOM UTILIZANDO A API PADRÃO
+        const elementoDOM = document.getElementsByClassName('menu')
+        // Como eu selecionei o elemento da DOM, para poder usar as funções do jQuery eu faço o comando abaixo
+        $(elementoDOM).css(comBorda)
+
+
+        // percorrer todos os filhos de um elemento (main), usar o each, passando uma callback, com 2 elementos (indice e elemento)
+        $('main').children().each((indice, elemento) => $(elemento).css(comBorda).css(semBorda)) // Aqui tmb, "enrolei" no $, para virar um elemento jQuery e não a DOM pura
+
+        $('li').each((i, e) => {
+            $(e).css(comBorda)
+        })
+
+        // OU SEJA, sempre que você selecionar um elemento via API padrão, ou usando o .each(), o retorno é um elemento da DOM "PURO". 
+        // caso eu queira usar algo do jQuery (como a minha função personalizada), preciso colocar este elemento dentro do jQuery $(elemento)
+        // assim terei todas as opções do jQuery ativas
+
     </script>
 </body>
