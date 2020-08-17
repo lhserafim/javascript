@@ -49,6 +49,31 @@
     </form>
 
     <script>
-        // ...
+
+        // IMPORTANTE: Tente ser o mais simples possível, evite ficar utlizando combinações malucas para selecionar os elementos no seu código!!
+        
+        // usando o jQuery para fazer a seleção de elementos na minha DOM
+        $('#feira').addClass('destaque').removeClass('destaque') // POR ID. Seria igual a isso: document.getElementById('primeiro').classList.add('destaque')
+        $('li').addClass('destaque') // POR ELEMENTO
+        $('[wm-obrigatorio]').removeClass('destaque') // POR ATRIBUTO PERSONALIZADO
+        $('li.opcional').removeClass('destaque') // POR ELEMENTO + ID
+        $('div p span').addClass('destaque') // ELEMENTO SPAN, QUE ESTÁ EM UM P DENTRO DE UMA DIV
+
+        // Exclusivos jQuery. Não tem na api padrão do JS
+        $('li:first').css('border', 'solid 3px yellow') // Primeiro elemento do tipo li (arroz)
+        $('li:odd').css('border', 'solid 10px orange') // Selecionando os elementos ímpares
+        $('li:gt(1)').css('border', 'solid 10px white') // Selecionando o greater then (gt) 1
+        $('li:not(:last)').css('border', 'dotted') // Selecionando os elementos da lista que não é o último
+        $('li:contains("r")').css('background-color', 'black') // Selecionando elementos que contenham a letra r 
+
+        // Trabalhando com formulários
+        $('form *').hide() // usando o seletor universal
+        // Reexibindo os formulários de acordo com o seu tipo
+        $('form :text').show()
+        $('form :password').show()
+        $('form :checkbox').show()
+        $('form :radio').show()
+        $('form :file').show()
+
     </script>
 </body>
