@@ -22,6 +22,30 @@
     </div>
 
     <script>
-        // ...
+        // Criando uma function, autoinvocada para proteger a variável dolar. Para evitar que alguem use o $ como variável
+        // Ex.: const $ = { nome: 'Não é o jQuery'}
+
+        (function ($) {
+            $.fn.interpretar = function () {
+                const retirarChaves = s => s.substring(2, s.length - 2) // Vai retirar os {{ }} das expressões
+                const conteudo = $(this).html() // volta o conteúdo da div. Puro, sem nenhum tratamento
+                //console.log($(this).html())
+                const expressoesComChaves = conteudo.match(/\{\{.+\}\}/g) // Busca as expressoes com chaves, do conteudo selecionado acima
+                const expressoes = expressoesComChaves.map(retirarChaves) // percorro usando o map, removendo as chaves
+                const resultados = expressoes.map( e => eval(e)) // chamo a eval para interpretar as expressões (lembra um execute immediate)
+
+                let conteudoFinal = conteudo
+                // Faço o replace p/ exibir na tela
+                for (let i = 0; i < expressoesComChaves.length; i++) {
+                    conteudoFinal = conteudoFinal.replace(
+                        expressoesComChaves[i], resultados[i]
+                    )
+                }
+                $(this).html(conteudoFinal)
+            }
+        })(jQuery)
+
+        $('div').interpretar()
+        
     </script>
 </body>
