@@ -38,7 +38,7 @@
 
             const diferencaEmMili = alvo.getTime() - agora.getTime()
             if (diferencaEmMili >= 0) {
-                const diferenca = regex.exec(new Date(diferencaEmMili).toISOString())
+                const diferenca = regex.exec(new Date(diferencaEmMili).toISOString()) // vai "tirar" do meu timezone
                 console.log(diferenca)
 
                 horaDezena.html(diferenca[1][0])
