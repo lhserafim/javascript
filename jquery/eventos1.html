@@ -20,6 +20,43 @@
     <input type="text" placeholder="Cor de Background">
 
     <script>
-        // ...
+        // Criando função para capturar a posição do mouse
+        function mostrarPosicaoMouse(e) {
+            $('#posicao').html(`x: ${e.clientX} y: ${e.clientY}`)
+        }
+        // Associar ao body o evento do mouse
+        $('body').on('mousemove', mostrarPosicaoMouse)
+
+        // Quando o mouse estiver em cima da div posicao, parar de marcar (desligar funçao)
+        $('#posicao').mouseover(e => {
+            $('body').off('mousemove', mostrarPosicaoMouse)
+        })
+
+        // Reativando o mouse, após deixar a div posicao. Note que não precisei usar a opção ON, usei mousemove.
+        $('#posicao').mouseleave(e => {
+            $('body').mousemove(mostrarPosicaoMouse)
+        })
+
+        let cliques = 0
+        $('body').click(e => {
+            $('#cliques').html(`Cliques: ${++cliques}`)
+        })
+
+        // Lendo a propriedade do estilo css e armazenando em const
+        const backgroundOriginal = $('body').css('background-color')
+
+        // Importante. Normalmente o KEYUP é melhor do que o KEYPRESS e KEYDOWN. O valor é atualizado mais rápido
+        // IMPORTANTE. Porque aqui eu usei uma function, ao invés de uma arrow function?
+        // Pq estou usando THIS e quero o this do escopo da função, pois dentro deste escopo ele é do elemento selecionado e está "wrapped" envolvido no jQuery
+        // OU SEJA, posso usar a fn .val(), que só existe no jquery
+        $('input').keyup(function (e) {
+            const valor = $(this).val()
+            console.log($(this).val())
+            if (valor.match(/#[\da-fA-F]{3,6}/)) {
+                $('body').css('background-color', valor)
+            } else {
+                $('body').css('background-color', backgroundOriginal)
+            }
+        })
     </script>
 </body>
