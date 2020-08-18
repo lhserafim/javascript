@@ -21,6 +21,26 @@
     <input type="text" placeholder="Digite e Selecione">
     <div id="resultado2">?</div>
     <script>
-        // ...
+        const alternarDestaque = () => $('#div1').toggleClass('destaque')
+        //$('#div1').mouseover(alternarDestaque)
+        // $('#div1').on('mouseenter mouseleave', alternarDestaque) // passando 2 eventos no on
+        $('#div1').hover(alternarDestaque) // Posso passar até 2 funções p/ o .hover(), pois ele aceita o evento IN e o envento OUT
+        $('#div1').one('mouseenter', e => alert('O evento one só é exibido 1 vez'))
+        $('#div1').dblclick(e => $('#div1').fadeOut(1000).fadeIn(1000))
+
+        // Capturando as dimensões (resize) da window
+        $(window).resize(function(e) {
+            const l = $(window).width()
+            const a = $(window).height()
+            $('#resultado1').html(`Largura: ${l} e Altura: ${a}`) 
+        })
+
+        // Capturando uma seleção (select) de texto em uma input 
+        $(':input').select(e => {
+            const inicio = e.target.selectionStart
+            const fim = e.target.selectionEnd
+            $('#resultado2').html(e.target.value.substring(inicio, fim))
+        })
+
     </script>
 </body>
