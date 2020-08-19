@@ -1,0 +1,8 @@
+Configuração inicial do bootstrap
+1. No terminal, acessar o diretório bootstrap/exercicios
+2. O bootstrap tem 2 dependências.
+    2.1. Primeira dependencia é o jQuery. Digitar: npm i --save-dev jquery@3.3.1 -E
+        2.1.1. Isso irá atualizar o arquivo package.json, inserindo a devDependencies "jquery": "3.3.1"
+    2.2. Segunda dependencia é o Popper. Digitar npm i --save-dev popper.js@1.14.3 -E
+        2.2.1. Isso irá atualizar o arquivo package.json, inserindo a devDependencies "popper.js": "1.14.3"
+3. Para ativar o servidor, ainda dentro do diretório bootstrap/exercicios digitar: npm start. Isso irá carregar na http://localhost:8080
