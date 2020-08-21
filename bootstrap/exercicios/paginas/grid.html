@@ -93,7 +93,8 @@
     <hr>
 
     <!-- Ordem -->
-    <!-- Eu posso definir a ordem, utilizando a classe .order(de 1 a 12) para ordenar meus elementos -->
+    <!-- Eu posso definir a ordem, utilizando a classe .order(de 1 a 12) para ordenar meus elementos 
+        ou também utilizando order-first ou order-last -->
     <div class="container-fluid">
         <div class="row">
             <div class="col-4 order-5 bg-primary">1</div>
@@ -106,6 +107,16 @@
     <hr>
 
     <!-- Offset -->
+    <!-- No offset eu especifico o quanto eu quero "pular" em termos de colunas. Um offset-7 vai pular 6 colunas -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-3 offset-7 bg-primary">1</div>
+            <div class="col-4 offset-3 bg-danger">2</div>
+            <div class="col-6 offset-1 bg-warning">3</div>
+            <!-- Só vai fazer o offset para dispositivos large -->
+            <div class="col-lg-6 offset-lg-1 bg-info">4</div>
+        </div>
+    </div>
 
     <h1 class="mt-5">6. Alinhamento</h1>
     <hr>
