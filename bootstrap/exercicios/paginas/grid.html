@@ -23,6 +23,31 @@
     <hr>
 
     <!-- Grid Básica -->
+    <!-- O grid do bootstrap tem 12 colunas. No exemplo abaixo a tela será ocupada de forma completa, divindo os espaços igualitariamente -->
+    <!-- Container fluid ocupa a tela toda. Só o container ocupa apenas o centro da tela -->
+    <div class="container-fluid">
+        <div class="row">
+            <!-- col refere-se a coluna. Quando não informado o sufixo do tamanho será por default extra small
+                col = extra small
+                col-sm = small
+                col-md = mediu
+                col-lg = large
+                col-xl = exra large -->
+            <div class="col bg-primary">1</div>
+            <div class="col bg-danger">2</div>
+            <div class="col bg-warning">3</div>
+            <div class="col bg-info">4</div>
+            <div class="col bg-secondary">5</div>
+        </div>
+    </div>
+    <!-- Posso associar um número a col. 
+        No exemplo abaixo, estou determinando o quanto eu quero ocupar em colunas para cada div -->
+    <div class="row mt-3">
+        <div class="col bg-danger">1</div>
+        <div class="col-4 bg-warning">2</div>
+        <div class="col-5 bg-info">3</div>
+        <div class="col bg-primary">4</div>
+    </div>
 
     <h1 class="mt-5">2. Grid Responsiva</h1>
     <hr>
