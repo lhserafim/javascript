@@ -122,6 +122,17 @@
     <hr>
 
     <!-- Alinhamento -->
+    <!-- A partir do bootstrap 4, o sistema de grid do bootstrap é baseado no flexbox -->
+    <!-- O alinhamento foi pelo eixo vertical -->
+    <div class="container-fluid">
+        <div class="row h-300">
+            <!-- a altura da minha div tem 300 pixels (h-300), por isso os elementos são alinhados como se fosse uma lista
+            na tela e é por isso que o item 1 fica "na ultima linha" -->
+            <div class="col-4 align-self-end bg-primary">1</div>
+            <div class="col-4 align-self-center bg-danger">2</div>
+            <div class="col-4 align-self-start bg-warning">3</div>
+        </div>
+    </div>
 </div>
 
 <style>
