@@ -144,6 +144,15 @@
 <hr>
 
 <!-- Tooltip -->
+<div>
+    <div class="alert alert-warning">
+        Precisa chamar uma função JS!
+        <strong>E agora?</strong>
+    </div>
+    <button class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Pense antes!">
+        Excluir
+    </button>
+</div>
 
 <h1 class="mt-5">6. Slider -
     <small>
@@ -164,5 +173,9 @@
 <!-- Accordion -->
 
 <script>
-    // ...
+    // Colocando o comando p/ chamar o java script para rodar o tootip
+    $('[data-toggle="tooltip"]').tooltip()
+    // para funcionar, necessário alterar o arquivo navegacao.js e adicionar o comando abaixo
+    // logo após o innerHtml
+    // eval(html.match(/\<script\>([\s\S]*)\<\/script\>/)[1])
 </script>

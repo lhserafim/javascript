@@ -12,6 +12,8 @@
             .then(resp => resp.text())
             .then(html => {
                 destino.innerHTML = html
+                // Estou colocando a chamada abaixo para poder executar o tooltip do bootstrap
+                eval(html.match(/\<script\>([\s\S]*)\<\/script\>/)[1])
             })
     }
 
