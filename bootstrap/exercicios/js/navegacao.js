@@ -13,7 +13,11 @@
             .then(html => {
                 destino.innerHTML = html
                 // Estou colocando a chamada abaixo para poder executar o tooltip do bootstrap
-                eval(html.match(/\<script\>([\s\S]*)\<\/script\>/)[1])
+                //eval(html.match(/\<script\>([\s\S]*)\<\/script\>/)[1])
+                const resultado = html.match(/\<script\>([\s\S]*)\<\/script\>/)
+                if(resultado && resultado.length >= 2) {
+                    eval(resultado[1])
+                }
             })
     }
 
