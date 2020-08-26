@@ -1,0 +1,10 @@
+// Como é um arquivo Sass (.scss), utilizo a importação do Sass
+// Vai importar o bootstrap completo
+@import "~bootstrap/scss/bootstrap"; // uso o ~ para indicar que o diretório é node_modules
+
+// Vou sobreescrever variável do Sass
+// De:
+$fa-font-path: "~font-awesome/fonts";
+@import "~font-awesome/scss/font-awesome";
+
+@import "custom";
