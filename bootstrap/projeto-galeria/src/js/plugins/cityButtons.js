@@ -1,5 +1,6 @@
 import $ from 'jquery' // para criar o plugin, eu preciso importar o jquery
 
+// Importando a função que vai carregar as callbacks dentro do array de callbacks
 import { onLoadHtmlSuccess } from '../core/includes'
 
 const duration = 300 // definir o tempo de duração da animação das imagens
@@ -48,6 +49,7 @@ $.fn.cityButtons = function () {
     return this // eu faço isto para poder fazer o chain (encadear chamadas)
 }
 
+// agora sim, chamando a função que foi criada e exportada no arquivo includes.js e importada aqui
 onLoadHtmlSuccess(function() {
     $('[wm-city-buttons]').cityButtons()
 })
