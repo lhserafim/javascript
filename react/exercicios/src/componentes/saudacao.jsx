@@ -9,6 +9,14 @@ export default class Saudacao extends Component {
         nome: this.props.nome
     }
 
+    // 365. Componente de Classe #02
+    // Criando uma função construtora
+    constructor(props) {
+        super(props) // chamada obrigatória
+        // para evitar problema com o this (usado lá no onchange) e garantir que está chamando a instancia correta
+        this.setTipo = this.setTipo.bind(this)
+    }
+
     // Crio as funções abaixo para setarem o valor (value) através do evento onchange
     setTipo(e) { // Criando uma fnc e recebendo um evento
         //console.log(e.target.value)
@@ -22,10 +30,19 @@ export default class Saudacao extends Component {
         // Vou tirar de props 2 parametros, tipo (BomDia, BoaTarde, BoaNoite) e nome de props desta instancia (this)
         const { tipo, nome } = this.state 
         return (
+            // <div>
+            //     <h1>{tipo} {nome}!</h1>
+            //     <hr/>
+            //     <input type="text" placeholder="Tipo..." value={tipo} onChange={e => this.setTipo(e)}/>
+            //     <input type="text" placeholder="Nome..." value={nome} onChange={e => this.setNome(e)}/>
+            // </div>
+            
+            // 365. Componente de Classe #02
+            // Deixei as chamadas onchange diferentes para exemplificar os 2 jeitos de fazer, usando constructor e arrow function
             <div>
                 <h1>{tipo} {nome}!</h1>
                 <hr/>
-                <input type="text" placeholder="Tipo..." value={tipo} onChange={e => this.setTipo(e)}/>
+                <input type="text" placeholder="Tipo..." value={tipo} onChange={this.setTipo}/>
                 <input type="text" placeholder="Nome..." value={nome} onChange={e => this.setNome(e)}/>
             </div>
         )
