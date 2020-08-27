@@ -14,6 +14,7 @@ import Primeiro from './componentes/Primeiro' // Não preciso passar a extensão
 import BomDia from './componentes/BomDia'
 import { BoaTarde, BoaNoite} from './componentes/Multiplos' // Estou usando o destructuring para importando as funções do arquivo multiplos
 import Saudacao from './componentes/saudacao' // O nome do arquivo podes ser minusculo
+import Pai from './componentes/Pai'
 
 
 // A chamada da função abaixo, irá jogar o texto de h1 dentro do meu elemento de id root. Ou seja,
@@ -42,8 +43,19 @@ import Saudacao from './componentes/saudacao' // O nome do arquivo podes ser min
 // ,document.getElementById('root'))
 
 // Aula 364. Componente de Classe #01
+// ReactDOM.render(
+//     <div>
+//         <Saudacao tipo="<<TIPO>>" nome="<<NOME>>" />
+//     </div>
+// , document.getElementById('root'))
+
+// Aula 366. Componentes: Pai & Filho #01
+/** Para que a herança funcione, no arquivo index.js, que vai fazer localizar o root e fazer a 
+ * injeção e renderização do meu código, preciso importar react, react-dom e meu componente personalizado Pai
+ * */ 
 ReactDOM.render(
     <div>
-        <Saudacao tipo="<<TIPO>>" nome="<<NOME>>" />
+        {/* Passando parametros para o componente pai */}
+        <Pai nome="Antonio Carlos" sobrenome="Serafim" />
     </div>
 , document.getElementById('root'))
