@@ -5,9 +5,12 @@
 import React from 'react' // SEMPRE importar é usado internamente p/ converter JSX!!
 import ReactDOM from 'react-dom'
 
+// importando o meu componente personalizado
+import Primeiro from './componentes/Primeiro' // Não preciso passar a extensão
+
 // A chamada da função abaixo, irá jogar o texto de h1 dentro do meu elemento de id root. Ou seja,
 // vai renderizar minha página dentro da div de id root
-ReactDOM.render(<h1>React</h1>, document.getElementById('root'))
+//ReactDOM.render(<h1>React</h1>, document.getElementById('root')) // Comentei pois vou usar abaixo chamando outro componente
 // IMPORTANTE!
 // O JAVA SCRIPT puro, não aceita HTML junto. A chamada acima faz parecer que estamos misturando JS com HTML.
 // Na verdade o que foi feito acima é um JAVA SCRIPT X (JSX) ou js eXtended. 
@@ -16,3 +19,5 @@ ReactDOM.render(<h1>React</h1>, document.getElementById('root'))
 
 // Ou seja, o framework facilita e permite misturar as tecnologias 
 
+
+ReactDOM.render(<Primeiro />, document.getElementById('root'))
