@@ -6,7 +6,13 @@ import React from 'react' // SEMPRE importar é usado internamente p/ converter 
 import ReactDOM from 'react-dom'
 
 // importando o meu componente personalizado
+
+// IMPORTANTE. 
+// Todos os componentes criados por voceê precisam ter a primeira letra maiúscula p/ poder funcionar!
+// é a forma que o react entende que é um componente seu e não um html
 import Primeiro from './componentes/Primeiro' // Não preciso passar a extensão
+import BomDia from './componentes/BomDia'
+
 
 // A chamada da função abaixo, irá jogar o texto de h1 dentro do meu elemento de id root. Ou seja,
 // vai renderizar minha página dentro da div de id root
@@ -19,5 +25,6 @@ import Primeiro from './componentes/Primeiro' // Não preciso passar a extensão
 
 // Ou seja, o framework facilita e permite misturar as tecnologias 
 
-
-ReactDOM.render(<Primeiro />, document.getElementById('root'))
+//ReactDOM.render(<Primeiro />, document.getElementById('root'))
+ReactDOM.render(<BomDia nome="Luiz Henrique" idade={10}/>, document.getElementById('root')) // Exemplo passando parametro
+// posso passar string "", numero {10}, boolean {true}
