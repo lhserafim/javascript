@@ -15,6 +15,7 @@ import BomDia from './componentes/BomDia'
 import { BoaTarde, BoaNoite} from './componentes/Multiplos' // Estou usando o destructuring para importando as funções do arquivo multiplos
 import Saudacao from './componentes/saudacao' // O nome do arquivo podes ser minusculo
 import Pai from './componentes/Pai'
+import Filho from './componentes/Filho'
 
 
 // A chamada da função abaixo, irá jogar o texto de h1 dentro do meu elemento de id root. Ou seja,
@@ -53,9 +54,20 @@ import Pai from './componentes/Pai'
 /** Para que a herança funcione, no arquivo index.js, que vai fazer localizar o root e fazer a 
  * injeção e renderização do meu código, preciso importar react, react-dom e meu componente personalizado Pai
  * */ 
+// ReactDOM.render(
+//     <div>
+//         {/* Passando parametros para o componente pai */}
+//         <Pai nome="Antonio Carlos" sobrenome="Serafim" />
+//     </div>
+// , document.getElementById('root'))
+
+// Aula. 367. Componentes: Pai & Filho #02
 ReactDOM.render(
     <div>
         {/* Passando parametros para o componente pai */}
-        <Pai nome="Antonio Carlos" sobrenome="Serafim" />
+        <Pai nome="Antonio Carlos" sobrenome="Serafim">
+            <Filho nome="Luiz Henrique" sobrenome="Serafim" idade={37} />
+            <Filho nome="Ana Carolina" sobrenome="Serafim" idade={33} />
+        </Pai>
     </div>
 , document.getElementById('root'))
