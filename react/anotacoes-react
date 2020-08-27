@@ -1,0 +1,14 @@
+Configurando o react
+1. Criar o diretório react
+2. Acessar o diretório via terminal
+3. Instalar o módulo do react pelo terminal, dentro do diretório react, digitar: sudo npm i -g create-react-app
+    3.1. Este é o módulo do node responsável por criar o build da nossa aplicação em react. Por baixo ele usa o webpack
+4. Criar o projeto, através do comando: create-react-app exercicios
+    4.1. Será criado o diretório informado (exercicios) e dentro dele uma série de arquivos e diretórios
+5. Após a instalação, acessar o diretório criado (exercicios), digitar: npm-start
+    5.1. Caso tenha algum problema na inicialização:
+        5.1.1. Mudar no package.json a versão do react-scripts para a versão igual a do professor "react-scripts": "1.1.4". 
+        5.1.2. Depois usei o comando npm update
+6. Automaticamente será iniciado o servidor e aberto uma janela do navegador
+    6.1. O arquivo HTML que está sendo executado está dentro de ./public/index.html
+7. Neste caso em específico, para aprendizado, vou entrar dentro da pasta src e EXCLUIR TODOS OS arquivos. Os mesmos serão recriados manualmente
