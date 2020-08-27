@@ -13,6 +13,7 @@ import ReactDOM from 'react-dom'
 import Primeiro from './componentes/Primeiro' // Não preciso passar a extensão
 import BomDia from './componentes/BomDia'
 import { BoaTarde, BoaNoite} from './componentes/Multiplos' // Estou usando o destructuring para importando as funções do arquivo multiplos
+import Saudacao from './componentes/saudacao' // O nome do arquivo podes ser minusculo
 
 
 // A chamada da função abaixo, irá jogar o texto de h1 dentro do meu elemento de id root. Ou seja,
@@ -33,9 +34,16 @@ import { BoaTarde, BoaNoite} from './componentes/Multiplos' // Estou usando o de
 //ReactDOM.render(<BomDia nome="Luiz Henrique" idade={10}/>, document.getElementById('root')) // Exemplo passando parametro
 
 // Aula 363. Múltiplos Componentes
+// ReactDOM.render(
+//     <div>
+//         <BoaTarde nome="Luiz" />
+//         <BoaNoite nome="Daniela" />
+//     </div>
+// ,document.getElementById('root'))
+
+// Aula 364. Componente de Classe #01
 ReactDOM.render(
     <div>
-        <BoaTarde nome="Luiz" />
-        <BoaNoite nome="Daniela" />
+        <Saudacao tipo="<<TIPO>>" nome="<<NOME>>" />
     </div>
-,document.getElementById('root'))
+, document.getElementById('root'))
