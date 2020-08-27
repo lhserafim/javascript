@@ -12,6 +12,7 @@ import ReactDOM from 'react-dom'
 // é a forma que o react entende que é um componente seu e não um html
 import Primeiro from './componentes/Primeiro' // Não preciso passar a extensão
 import BomDia from './componentes/BomDia'
+import { BoaTarde, BoaNoite} from './componentes/Multiplos' // Estou usando o destructuring para importando as funções do arquivo multiplos
 
 
 // A chamada da função abaixo, irá jogar o texto de h1 dentro do meu elemento de id root. Ou seja,
@@ -25,6 +26,16 @@ import BomDia from './componentes/BomDia'
 
 // Ou seja, o framework facilita e permite misturar as tecnologias 
 
+// Aula 361. Primeiro Componente
 //ReactDOM.render(<Primeiro />, document.getElementById('root'))
-ReactDOM.render(<BomDia nome="Luiz Henrique" idade={10}/>, document.getElementById('root')) // Exemplo passando parametro
-// posso passar string "", numero {10}, boolean {true}
+
+// Aula 362. Componente com parâmetro
+//ReactDOM.render(<BomDia nome="Luiz Henrique" idade={10}/>, document.getElementById('root')) // Exemplo passando parametro
+
+// Aula 363. Múltiplos Componentes
+ReactDOM.render(
+    <div>
+        <BoaTarde nome="Luiz" />
+        <BoaNoite nome="Daniela" />
+    </div>
+,document.getElementById('root'))
