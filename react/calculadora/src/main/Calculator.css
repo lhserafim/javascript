@@ -1,8 +1,13 @@
 /* Aula 369. Componente Calculator */
 .calculator {
-    height: 320px;
+    height: 245px; /* Alterado de 320px para ficar do mesmo tamanho da calc do mac */
     width: 235px;
     border-radius: 5px;
     overflow: hidden;
-    background-color: red; /* Temporário */
+    /* background-color: red; Temporário */
+    /* 370. Componente Button #01 */
+    /* Estou usando o flexbox no meu body e vou usar o grid nos botões */
+    display: grid; /* Colocou os botões um embaixo do outro */
+    grid-template-columns: repeat(4,25%); /* Simulando o leiaute da calc do mac, com 4 colunas ocupando 25% da área */
+    grid-template-rows: 48px 48px 48px 48px;
 }

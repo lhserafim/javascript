@@ -1,0 +1,21 @@
+/* 370. Componente Button #01 */
+
+/* No Exemplo abaixo, estou utilizando VARIÁVEIS dentro do meu arquivo CSS. 
+Isto não é SASS, é CSS raiz! 
+Vantagem:
+Se eu altero a propriedade dentro do meu :root, todos os seletores que aplicarem as variáveis são atualizados
+*/
+
+:root {
+    --bg-button: #f0f0f0;
+    --border-button: solid 1px #888;
+}
+
+.button {
+    font-size: 1.4em;
+    background-color: var(--bg-button); /* usando a variável */
+    border: none;
+    border-right: var(--border-button);
+    border-bottom: var(--border-button);
+    outline: none;
+}
