@@ -1,0 +1,8 @@
+/* Aula 369. Componente Calculator */
+.calculator {
+    height: 320px;
+    width: 235px;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: red; /* Temporário */
+}

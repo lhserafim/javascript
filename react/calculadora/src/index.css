@@ -1,3 +1,5 @@
+/* Aula 369. Componente Calculator */
+/* Remover
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +12,25 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+} */
+
+/* Primeiramente, importar a fonte que eu baixei manualmente do site do google */
+@font-face {
+  font-family: 'RobotoMono';
+  src: url('./fonts/RobotoMono-Thin.ttf');
+}
+
+/* Seletor universal, para aplicar a fonte */
+* {
+  font-family: 'RobotoMono', monospace;
+}
+
+body {
+  display: flex; /*Usando flexbox*/
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(to right, rgb(83, 105, 118), rgb(41, 46, 73)); /*https://uigradients.com/#TheBlueLagoon*/
 }
