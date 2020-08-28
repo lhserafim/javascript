@@ -38,7 +38,33 @@ export default class Calculator extends Component {
     }
 
     setOperation(operation) {
-        console.log(operation)
+        //console.log(operation)
+        //Aula 374. Implementando a Lógica #02
+        if (this.state.current === 0) {
+            this.setState({ operation, current: 1, clearDisplay: true }) // Altero o estado dos itens do objeto
+        } else {
+            const equals = operation === '=' // pego caso a operação seja igual =
+            const currentOperation = this.state.operation // pegando a operação atual
+
+            const values = [...this.state.values] // gerando um clone de values
+            // Ao invés de usar o switch ou if, vou usar o eval. o Eval é +- como o execute immediate do oracle!
+            // Neste caso, vai gerar uma advertência, mas vamos usá-lo mesmo assim para economizar código!
+            // básicamente estou pegando o valor 1 a operação clicada e o valor 2 e jogar no valor zero (que funciona como acumulador)
+            try { // o Eval pode gerar algum erro. Melhor tratar
+                values[0] = eval(`${values[0]} ${currentOperation} ${values[1]}`)
+            } catch(e) {
+                values[0] = this.state.value[0]
+            }
+            values[1] = 0
+
+            this.setState({
+                displayValue: values[0], // Exibe o valor que está na posição 0 do meu array, que uso como acumuladora
+                operation: equals ? null : operation, // se for = não faço nada, se não seto o operation com a operação atual
+                current: equals ? 0 : 1, // se for igual, vou mexer no valor 0 do array, se não no valor 1
+                clearDisplay: !equals,
+                values // substituir os valores no estado
+            })
+        }
     }
 
     addDigit(n) {
