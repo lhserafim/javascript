@@ -3,7 +3,8 @@
 import React, { Component } from 'react'
 import './Calculator.css' // O arquivo .css não precisa ser from alguma coisa
 
-import Button from '../components/Button' // 370. Componente Button #01
+import Button from '../components/Button' // Aula 370. Componente Button #01
+import Display from '../components/Display' // Aula 371. Componente Display
 
 // Utilizando a exportação padrão do ECMAscript 2015
 export default class Calculator extends Component {
@@ -15,7 +16,9 @@ export default class Calculator extends Component {
             // 2. Pq apesar de ser um elemento HTML, este trecho de código é um JSX e não um HTML
             // 3. O react faz o transpile deste código para JS
             <div className="calculator"> {/*Esta className é referenciada em Calculator.css*/}
-                {/* 370. Componente Button #01 */}
+                {/* Aula 371. Componente Display */}
+                <Display value={100}/>
+                {/* Aula 370. Componente Button #01 */}
                 <Button label="AC"/>
                 <Button label="/"/>
                 <Button label="7"/>

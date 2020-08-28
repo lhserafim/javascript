@@ -1,0 +1,12 @@
+/* Aula 371. Componente Display */
+.display {
+    grid-column: span 4; /* Fez os botões descerem na minha calculadora, pois quero ocupar 4 por área */
+    background-color: #0004;
+    /* Apesar do meu elemento display, fazer parte de uma grid, eu posso colocar o display dele como flexbox */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px;
+    font-size: 2.1em;
+    overflow: hidden; /* Não deixar o valor digitado extrapolar a calculadora */
+}

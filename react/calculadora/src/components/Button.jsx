@@ -1,4 +1,4 @@
-// 370. Componente Button #01
+// Aula 370. Componente Button #01
 
 import React from 'react'
 import './Button.css' // Assim como no exemplo anterior, importo o css que é "par" do arquivo jsx
