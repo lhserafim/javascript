@@ -19,3 +19,27 @@ Se eu altero a propriedade dentro do meu :root, todos os seletores que aplicarem
     border-bottom: var(--border-button);
     outline: none;
 }
+
+/* Aula 372. Componente Button #02 */
+.button:active { /* Usando uma pseudo classe */
+    background-color: #ccc; /* Ao clicar no botão, por isso estou usando a pseudo classe, vai escurecer o botão */
+}
+
+/* Tratando os botões que ocuparão 2 ou 3 espaços (igual a calc do mac) */
+.button.double {
+    grid-column: span 2;
+}
+
+.button.triple {
+    grid-column: span 3;
+}
+
+/* Tratando os botões referentes a operações. */
+.button.operation {
+    background-color: #fa8231;
+    color: #fff;
+}
+
+.button.operation:active {
+    background-color: #fa8231cc; /* O cc é referente a transparência */
+}
