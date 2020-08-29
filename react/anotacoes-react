@@ -1,6 +1,3 @@
-OBS:
-Neste projeto estou trabalhando com back e front separados. Tanto que cada um roda em uma porta
-
 Configurando o react
 1. Criar o diretório react
 2. Acessar o diretório via terminal
@@ -16,7 +13,13 @@ Configurando o react
     6.1. O arquivo HTML que está sendo executado está dentro de ./public/index.html
 7. Neste caso em específico, para aprendizado, vou entrar dentro da pasta src e EXCLUIR TODOS OS arquivos. Os mesmos serão recriados manualmente
 
+-----------------------------------------------------------------------------------------------------------------------------
+
 Projeto Cadastro de usuários
+
+OBS:
+Neste projeto estou trabalhando com back e front separados. Tanto que cada um roda em uma porta
+
 Aula 375. Implementando Backend (JSON Server)
 1. Em react, criar o diretório crud e o subdiretório backend
 2. No terminal, acessar o diretório (backend) e digitar o comando: npm init -y
@@ -27,7 +30,7 @@ Aula 375. Implementando Backend (JSON Server)
 7. Dentro do arquivo package.json, deletar a linha do script de teste e colocar: "start": "json-server --watch db.json --port 3001"
 8. Digitar no terminal (dentro da pasta backend) npm start
 
-376. Criando Projeto Frontend
+Aula 376. Criando Projeto Frontend
 9. Acessar o diretório /react/crud, no terminal
 10. Dentro de crud, digitar: create-react-app frontend
 11. Acessar o aquivo package.json (DENTRO DE frontend) e alterar a versão do react-scripts para 1.1.4 e rodar o npm update
@@ -38,4 +41,18 @@ Aula 375. Implementando Backend (JSON Server)
     "font-awesome": "4.7.0",
     "react-router": "4.2.0",
     "react-router-dom": "4.2.2",
-14. Acessar o diretório frontend e digitar: npm i , para instalar as dependencias 
+14. Acessar o diretório frontend e digitar: npm i , para instalar as dependencias
+
+Aula 377. Criando Componentes (Template)
+15. Acessar o diretório react/crud/frontend/src e criar o diretório components e dentro dele o diretório template
+16. Dentro deste novo diretório (template) e criar os arquivos necessários (Logo, Header, etc)
+17. Dentro da pasta src, criar o diretório main e criar um arquivo App.css e App.jsx
+18. Dentro do arquivo App.jsx, fazer as importações dos arquivos criados no diretório template (Logo, Nav, Main, etc)
+OBS.: Até aqui, todos os componentes criados são funcionais, ou seja, sem estado! Ex.: export default props =>
+19. Editar o arquivo index.js, alterar o import de: import App from './App'; para : import App from './main/App';
+20. Excluir os arquivos desnecessários 
+    /react/crud/frontend/src/...
+        App.css
+        App.js
+        App.test.js
+        logo.svg
