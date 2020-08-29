@@ -12,3 +12,14 @@ Configurando o react
 6. Automaticamente será iniciado o servidor e aberto uma janela do navegador
     6.1. O arquivo HTML que está sendo executado está dentro de ./public/index.html
 7. Neste caso em específico, para aprendizado, vou entrar dentro da pasta src e EXCLUIR TODOS OS arquivos. Os mesmos serão recriados manualmente
+
+Projeto Cadastro de usuários
+Aula 375. Implementando Backend (JSON Server)
+1. Em react, criar o diretório crud e o subdiretório backend
+2. No terminal, acessar o diretório (backend) e digitar o comando: npm init -y
+3. Será gerado o aquivo package.json
+4. Criar uma dependência, via terminal, digitar o comando: npm i --save json-server@0.13.0 -E
+5. Serão criados os diretórios node_modules e o arquivo package-lock.json
+6. Dentro de backend, criar um arquivo db.json e criar um JSON com os usuários desejados
+7. Dentro do arquivo package.json, deletar a linha do script de teste e colocar: "start": "json-server --watch db.json --port 3001"
+8. Digitar no terminal (dentro da pasta backend) npm start
