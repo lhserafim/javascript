@@ -1,3 +1,6 @@
+OBS:
+Neste projeto estou trabalhando com back e front separados. Tanto que cada um roda em uma porta
+
 Configurando o react
 1. Criar o diretório react
 2. Acessar o diretório via terminal
@@ -23,3 +26,16 @@ Aula 375. Implementando Backend (JSON Server)
 6. Dentro de backend, criar um arquivo db.json e criar um JSON com os usuários desejados
 7. Dentro do arquivo package.json, deletar a linha do script de teste e colocar: "start": "json-server --watch db.json --port 3001"
 8. Digitar no terminal (dentro da pasta backend) npm start
+
+376. Criando Projeto Frontend
+9. Acessar o diretório /react/crud, no terminal
+10. Dentro de crud, digitar: create-react-app frontend
+11. Acessar o aquivo package.json (DENTRO DE frontend) e alterar a versão do react-scripts para 1.1.4 e rodar o npm update
+12. Testar, rodando npm start
+13. Adicionar as depêndencias no arquivo frontend/package.json
+    "axios": "0.18.0", 
+    "bootstrap": "4.1.1",
+    "font-awesome": "4.7.0",
+    "react-router": "4.2.0",
+    "react-router-dom": "4.2.2",
+14. Acessar o diretório frontend e digitar: npm i , para instalar as dependencias 
