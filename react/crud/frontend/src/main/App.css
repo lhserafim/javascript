@@ -58,6 +58,7 @@ footer.footer {
     grid-area: footer;
 }
 
+/* Aula 389. Adicionando Responsividade */
 @media(max-width: 768px) {
     .app {
         grid-template-rows:

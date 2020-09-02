@@ -18,6 +18,7 @@ aside.menu-area {
     background: linear-gradient(135deg, #07a7e3 0%, #32dac3 100%);
 }
 
+/* Aula 389. Adicionando Responsividade */
 @media(max-width: 768px) {
     .menu {
         display: flex;
