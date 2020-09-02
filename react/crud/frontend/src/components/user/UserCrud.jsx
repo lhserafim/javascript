@@ -25,6 +25,13 @@ export default class UserCrud extends Component {
     // Carregando o estado inicial, conforme const criada, fazendo spread
     state = { ...initialState } // Aula 386. Componente Cadastro Usuário #02
 
+    // Esta função é que irá acessar a URL, recuperar os cadastros no meu banco e jogar na lista
+    componentWillMount() { // Aula 388. Componente Cadastro Usuário #04
+        axios(baseUrl).then(resp => {
+            this.setState({ list: resp.data })
+        })
+    }
+
     // Função responsável por limpar o formulário USER. Não vai limpar a lista
     clear() { // Aula 386. Componente Cadastro Usuário #02
         this.setState({ user: initialState.user })
@@ -106,12 +113,63 @@ export default class UserCrud extends Component {
             </div>
         )
     }
-
     
+    load(user) { // Aula 388. Componente Cadastro Usuário #04
+        this.setState({ user })
+    }
+
+    remove(user) { // Aula 388. Componente Cadastro Usuário #04
+        axios.delete(`${baseUrl}/${user.id}`).then(resp => {
+            const list = this.getUpdatedList(user, false)
+            this.setState({ list })
+        })
+    }
+
+    renderTable() { // Aula 388. Componente Cadastro Usuário #04
+        return (
+            <table className="table mt-4">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>E-mail</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {this.renderRows()}
+                </tbody>
+            </table>
+        )
+    }
+
+    renderRows() { // Aula 388. Componente Cadastro Usuário #04
+        return this.state.list.map(user => {
+            return (
+                <tr key={user.id}>
+                    <td>{user.id}</td>
+                    <td>{user.name}</td>
+                    <td>{user.email}</td>
+                    <td>
+                        <button className="btn btn-warning"
+                            onClick={() => this.load(user)}>
+                            <i className="fa fa-pencil"></i>
+                        </button>
+                        <button className="btn btn-danger ml-2"
+                            onClick={() => this.remove(user)}>
+                            <i className="fa fa-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+            )
+        })
+    }
+
     render() {
         return (
             <Main {...headerProps}>
                 {this.renderForm()} {/* Aula 387. Componente Cadastro Usuário #03 */}
+                {this.renderTable()} {/* Aula 388. Componente Cadastro Usuário #04 */} 
             </Main>
         )
     }    
