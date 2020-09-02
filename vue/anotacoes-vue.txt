@@ -1,0 +1,6 @@
+Anotações VUE
+1. Baixar o zip do site da cod3r
+2. Adicionar a pasta descompactada ao diretório do curso
+3. Abrir o terminal e digitar: npm run exercicios
+    3.1. Aqui estou usando o npm run exercicios (ao invés do npm start), pq é um script personalizdo, que não é esperado pelo npm
+4. Abrir o navegador no endereço exibido no terminal
