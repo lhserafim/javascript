@@ -1,6 +1,9 @@
 // Aula 377. Criando Componentes (Template)
 import React from 'react'
 import './App.css'
+//Aula 380. Componente Cabeçalho
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'font-awesome/css/font-awesome.min.css'
 
 // Importando os arquivos de template. Não preciso importar o Header, pois ele está dentro de Main!
 import Logo from '../components/template/Logo'
@@ -13,6 +16,7 @@ export default props =>
     <div className="app">
         <Logo />
         <Nav />
-        <Main />
+        <Main icon="home" title="Início"
+            subtitle="Segundo Projeto do capítulo de react."/>
         <Footer />
     </div>

@@ -7,7 +7,7 @@ import './Main.css'
 export default props =>
     // Como vou retornar + do que 1 elemento (Header e main) preciso envolver em uma div ou React.Fragment ou um array
     <React.Fragment>
-        <Header />
+        <Header {...props}/> {/* Aula 380. Componente Cabeçalho - Recebendo as propriedades definidas em App.jsx <Main /> */}
         <main className="content">
             Conteúdo
         </main>
