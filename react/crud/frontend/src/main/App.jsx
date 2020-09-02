@@ -8,7 +8,9 @@ import 'font-awesome/css/font-awesome.min.css'
 // Importando os arquivos de template. Não preciso importar o Header, pois ele está dentro de Main!
 import Logo from '../components/template/Logo'
 import Nav from '../components/template/Nav'
-import Main from '../components/template/Main'
+// Aula 383. Componente Conteúdo
+//import Main from '../components/template/Main'
+import Home from '../components/home/Home'
 import Footer from '../components/template/Footer'
 
 export default props => 
@@ -16,7 +18,6 @@ export default props =>
     <div className="app">
         <Logo />
         <Nav />
-        <Main icon="home" title="Início"
-            subtitle="Segundo Projeto do capítulo de react."/>
+        <Home /> {/* Aula 383. Componente Conteúdo */}
         <Footer />
     </div>

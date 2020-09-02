@@ -1,0 +1,7 @@
+/* Aula 383. Componente Conteúdo */
+
+/* Dentro de main, vai ter uma div "main > div" */
+main > div {
+    background-color: #fff;
+    box-shadow: 0px 0px 15px #0004;
+}
