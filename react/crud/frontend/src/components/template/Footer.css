@@ -1,0 +1,11 @@
+/* Aula 381. Componente Rodapé */
+/* Ou seja... tag (elemento) footer, com a classe footer */
+
+footer.footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 25px;
+    background-color: #fff;
+    box-shadow: var(--shadow);
+}
