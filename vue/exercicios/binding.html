@@ -7,9 +7,34 @@
     <script src="/js/vue.min.js"></script>
 </head>
 <body class="exercicio">
+    <div id="app">
+        <p>{{link}}</p>
+        <!-- Vou usar uma diretiva (v-bind) para interpolar um link -->
+        <!-- Diretivas são propriedades personalizadas (tipo as wm-algumaCoisa) -->
+        <p><a v-bind:href="link">Canal</a></p>
+        <!-- Também posso fazer da forma abaixo, usando apenas os : Assim fica parecido com PL/SQL -->
+        <p><a :href="link">Canal</a></p>
+        <!-- Utilizando diretiva que permite a atualização em 2 vias (v-model) -->
+        <p>
+            <input type="text" v-model="nome"><br>
+            <span>{{ nome }}</span>
+        </p>
+
+    </div>
 
     <script>
-        // ...
+        new Vue({
+            el: "#app",
+            data: {
+                nome: "Maria",
+                link: "https://youtube.com/cod3rcursos"
+            },
+            watch: {
+                nome(novoValor) {
+                    console.log(novoValor.toUpperCase())
+                }
+            }
+        })
     </script>
 </body>
 </html>
