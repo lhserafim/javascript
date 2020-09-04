@@ -7,9 +7,43 @@
     <script src="/js/vue.min.js"></script>
 </head>
 <body class="exercicio">
+    <!-- Esta div será o trecho de HTML que será controlado pelo vue. Chamamos de template. Que é a área onde o vue fará as manipulações (renderizações) -->
+    <div id="app">
+        <!-- Fazendo um exemplo básico, utilizando o vue. Ele irá INTERPOLAR a expreção que está dentro de double mustache e trazer o resultado na tela -->
+        <p>1) {{ 2 + 2 }}</p>
+        <p>2) {{ "teste".toUpperCase() }}</p>
+        <!-- Repare que para acessar os atributos do meu objeto data, eu não preciso passar this, nem data.algumaCoisa... o VUE sabe exatamente o que está procurando só pelo nome do atributo -->
+        <p>3) Produto: {{ nome }}, R$ {{ preco }}. {{ desconto * 100 }} %</p>
+        <!-- Chamando um método. Passar () -->
+        <p>4) Data Certa: {{ dataCerta() }}</p>
+        <!-- Como é um valor computado, não precisa passar o () -->
+        <p>5) Preço com desconto: {{precoComDesconto}}</p>
+
+    </div>
 
     <script>
-        // ...
+        // Chamando uma função construtora
+        // Chamamos de VUE Instance e é onde eu vou passar as propriedades do objeto
+        new Vue({
+            // el => element (que é o seletor do ID que o vue vai controlar)
+            el: "#app",
+            data: {
+                nome: 'Caneta',
+                preco: 6.89,
+                desconto: 0.15
+            },
+            methods: { 
+                dataCerta() {
+                    return new Date().toDateString()
+                }
+            },
+            computed: {
+                precoComDesconto() {
+                    // Aqui eu preciso usar o this, mas ainda sem o data.algumaCoisa
+                    return this.preco * (1 - this.desconto)
+                }
+            }
+        })
     </script>
 </body>
 </html>
