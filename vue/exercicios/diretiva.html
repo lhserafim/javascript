@@ -7,9 +7,27 @@
     <script src="/js/vue.min.js"></script>
 </head>
 <body class="exercicio">
-
+    <div id="app">
+        <input type="text" v-model="nome">
+        <!-- v-inverter não existe. vou criar uma diretiva personalizada -->
+        <div v-inverter="nome"></div>
+    </div>
     <script>
-        // ...
+        // Criando uma diretiva personalizada
+        Vue.directive('inverter', {
+            componentUpdated(el, binding) {
+                // Vou receber o valor do bind (nome) e fazer um split p/ criar um array
+                const invertido = binding.value.split('').reverse().join('')
+                el.innerHTML = invertido
+
+            }
+        })
+        new Vue({
+            el: "#app",
+            data: {
+                nome: ''
+            }
+        })
     </script>
 </body>
 </html>
