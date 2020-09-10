@@ -7,9 +7,22 @@
     <script src="/js/vue.min.js"></script>
 </head>
 <body class="exercicio">
-    
+    <div id="app"></div>
     <script>
-        // ...
+        // Neste exemplo não vou criar os elementos dentro da div, vou usar o template para criar os elementos
+        new Vue({
+            el: "#app",
+            data: {
+                titulo: "VueJS",
+                subtitulo: "Framework Progressivo"
+            },
+            // Necessário usar o simbolo da crase (backtick)
+            template: `
+                <div>
+                    <h1>{{ titulo }}</h1>
+                    <h3>{{ subtitulo }}</h3>
+            `
+        })
     </script>
 </body>
 </html>
