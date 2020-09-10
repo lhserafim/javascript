@@ -17,7 +17,7 @@
                  @input -> Sempre que o usuário digitar alguma coisa neste input, ele irá chamar a função onData-->
             <input type="text" size="25" 
                 placeholder="Digite para gerar..." 
-                :value="text" @input="onData">
+                :value="text" @input="onData"> <!-- poderia usar o v-model="text" e excluir o method -->
         </div>
 
         <div v-if="text" class="output">
