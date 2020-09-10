@@ -7,9 +7,49 @@
     <script src="/js/vue.min.js"></script>
 </head>
 <body class="exercicio">
-
+    <div id="app">
+        <p>{{ contador }}</p>
+        <p>
+            <!-- Chamando o evento on-click no vue. Usando a diretiva v-on e chamando o método add -->
+            <button v-on:click="add">+1</button>
+            <!-- Também posso usar o @click ao invés de v-on:click.
+            O vue tmb me permite passar o código DIRETAMENTE no elemento, sem a necessidade da criação do metódo -->
+            <button @click="contador -= 2">-2</button>
+        </p>
+        <!-- O evento só será ativado ao passar o mouse sobre o paragrafo -->
+        <p @mousemove="atualizarPosicao">
+            Coordenadas: {{x}} e {{y}}
+            <!-- Utilizando modificadores! -->
+            <span @mousemove.stop>Aqui Não</span>
+        </p>
+        <!-- Ao pressionar a tecla enter, vai disparar o alerta. Eu poderia usar qualquer tecla!!
+        @keyup.a 
+        @keyup.b e assim sucessivamente -->
+        <input type="text" @keyup.enter="alerta">
+    </div>
     <script>
-        // ...
+        new Vue({
+            el: "#app",
+            data: {
+                // Criando as propriedades
+                x: 0,
+                y: 0,
+                contador: 0
+            },
+            methods: {
+                add() {
+                    this.contador++
+                },
+                atualizarPosicao(e) {
+                    // pegar a posição do mouse
+                    this.x = e.clientX
+                    this.y = e.clientY
+                },
+                alerta() {
+                    alert('Enter!')
+                }
+            }
+        })
     </script>
 </body>
 </html>
