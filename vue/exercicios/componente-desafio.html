@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Componente</title>
+    <link rel="stylesheet" href="/css/estilo.css">
+    <script src="/js/vue.min.js"></script>
+</head>
+<body class="exercicio">
+    <div id="app">
+        <!-- Repare que o elemento (tag) leva o nome do parametro do componente -->
+        <add></add>
+        <subtracao></subtracao>
+    </div>
+    <script>
+        Vue.component('add', {
+            // Observação: O atributo data é uma FUNÇÃO e retorna um OBJETO, para que retorne sempre um novo objeto de dados
+            data: function() {
+                return {
+                    contador: 0
+                }
+            },
+            methods: {
+                add() {
+                    this.contador++
+                }
+            },
+            template: `
+                <div>
+                    {{ contador }}
+                    <button @click="add">+1</button>
+                </div>
+            `
+        })
+        Vue.component('subtracao', {
+            data: function() {
+                return {
+                    contador: 0
+                }
+            },
+            methods: {
+                sub() {
+                    this.contador--
+                }
+            },
+            template: `
+                <div>
+                    {{ contador }}
+                    <button @click="sub">-1</button>
+                </div>
+            `
+        })
+        // Criando a minnha instancia do vue
+        new Vue({
+            el: "#app"
+        })
+    </script>
+</body>
+</html>
