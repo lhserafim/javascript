@@ -12,9 +12,20 @@
     </style>
 </head>
 <body class="exercicio">
-
+    <!-- Estou usando a captura do evento on-click (com @click) para inverter o valor do atributo aplicarCor, que é boleano e na 
+    sequencia aplico a cor da classe .vermelho de forma condicional -->
+    <div id="app" @click="aplicarCor = !aplicarCor" :class="{vermelho: aplicarCor}">
+        CLIQUE PARA APLICAR O BACKGROUND AO TEXTO
+    </div>
     <script>
-        // ...
+        // Aplicando css de forma condicional
+        new Vue({
+            el: "#app",
+            data:  {
+                // criando um atributo de valor boolean
+                aplicarCor: false
+            }
+        })
     </script>
 </body>
 </html>
