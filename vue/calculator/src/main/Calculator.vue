@@ -1,8 +1,25 @@
 // Aula 405. Criando Componentes
 <template>
     <div class="calculator">
-        <Display />
-        <Button />
+        <Display :value="displayValue" />
+        <!-- Aula 406. Componente Button #01 -->
+        <Button label="AC" triple @onClick="clearMemory" />
+        <Button label="/" operation @onClick="setOperation" />
+        <Button label="7" @onClick="addDigit" />
+        <Button label="8" @onClick="addDigit" />
+        <Button label="9" @onClick="addDigit" />
+        <Button label="*" operation @onClick="setOperation" />
+        <Button label="4" @onClick="addDigit" />
+        <Button label="5" @onClick="addDigit" />
+        <Button label="6" @onClick="addDigit" />
+        <Button label="-" operation @onClick="setOperation" />
+        <Button label="1" @onClick="addDigit" />
+        <Button label="2" @onClick="addDigit" />
+        <Button label="3" @onClick="addDigit" />
+        <Button label="+" operation @onClick="setOperation" />
+        <Button label="0" double @onClick="addDigit" />
+        <Button label="." @onClick="addDigit" />
+        <Button label="=" operation @onClick="setOperation" />
     </div>
 </template>
 
