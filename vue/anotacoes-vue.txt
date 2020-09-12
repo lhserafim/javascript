@@ -4,3 +4,12 @@ Anotações VUE
 3. Abrir o terminal e digitar: npm run exercicios
     3.1. Aqui estou usando o npm run exercicios (ao invés do npm start), pq é um script personalizdo, que não é esperado pelo npm
 4. Abrir o navegador no endereço exibido no terminal
+
+Criando o projeto da calculadora
+1. Instalar o VUE de forma global. No terminal digitar: sudo npm i -g @vue/cli
+2. Instalar o plugin do VUE Vetur do Pine Wu
+3. Após as instalações, no terminal acessar o diretório do vue e digitar: vue create calculator
+    3.1. A instalação fará uma pergunta, pressione enter ou escolha o que for desejado
+4. As pastas foram criadas, agora basta acessá-la 
+5. Dentro do diretório criado calculator, digitar npm run serve
+6. Clicar no link gerado
