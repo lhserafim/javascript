@@ -30,6 +30,15 @@ import Display from "../components/Display"
 import Button from "../components/Button"
 
 export default {
+    data: function() {
+        return {
+            displayValue: "0",
+            clearDisplay: false,
+            operation: null,
+            values: [0, 0],
+            current: 0
+        }
+    },
     // Referenciar as importações acima
     components: { Button, Display },
     // Aula 408. Componente Button #02
