@@ -1,6 +1,7 @@
 // Aula 405. Criando Componentes
 <template>
     <button class="button"
+        @click="$emit('onClick', label)"
         :class="{ double, triple, operation }">
         {{ label }}
     </button>

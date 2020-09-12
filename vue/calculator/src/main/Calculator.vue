@@ -3,6 +3,7 @@
     <div class="calculator">
         <Display :value="displayValue" />
         <!-- Aula 406. Componente Button #01 -->
+        <!-- Aula 408. Componente Button #02 -->
         <Button label="AC" triple @onClick="clearMemory" />
         <Button label="/" operation @onClick="setOperation" />
         <Button label="7" @onClick="addDigit" />
@@ -30,7 +31,56 @@ import Button from "../components/Button"
 
 export default {
     // Referenciar as importações acima
-    components: { Button, Display }
+    components: { Button, Display },
+    // Aula 408. Componente Button #02
+    methods: {
+        clearMemory() {
+            Object.assign(this.$data, this.$options.data())
+        },
+        setOperation(operation) {
+            if (this.current === 0) {
+                this.operation = operation
+                this.current = 1
+                this.clearDisplay = true
+            } else {
+                const equals = operation === "="
+                const currentOperation = this.operation
+                try {
+                    this.values[0] = eval(
+                        `${this.values[0]} ${currentOperation} ${this.values[1]}`
+                    )
+                } catch (e) {
+                    this.$emit('onError', e)
+                }
+                this.values[1] = 0
+                this.displayValue = this.values[0]
+                this.operation = equals ? null : operation
+                this.current = equals ? 0 : 1
+                this.clearDisplay = !equals
+            }
+        },
+        addDigit(n) {
+            if (n === "." && this.displayValue.includes(".")) {
+                return
+            }
+            const clearDisplay = this.displayValue === "0"
+                || this.clearDisplay
+            const currentValue = clearDisplay ? "" : this.displayValue
+            const displayValue = currentValue + n
+            this.displayValue = displayValue
+            this.clearDisplay = false
+            
+            // Alternativa 1
+            this.values[this.current] = displayValue
+            
+            // Alternativa 2
+            // if (n !== ".") {
+            //     const i = this.current
+            //     const newValue = parseFloat(displayValue)
+            //     this.values[i] = newValue
+            // }
+        }
+    }
 
 }
 </script>
