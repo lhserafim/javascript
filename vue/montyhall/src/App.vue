@@ -3,16 +3,17 @@
 <template>
     <div id="app">
         <h1>Problema de Monty Hall</h1>
-        <Gift />
+        <!-- Aula 413. Problema de Monty Hall #03 -->
+        <Door number="1" :hasGift="false"/> <!-- Repare que para poder passar o boolean, eu preciso usar o bind : -->
     </div>
 </template>
 
 <script>
 // importação utilizando o padrão de importação de módulos do ECMAScript 2015
-import Gift from './components/Gift'
+import Door from './components/Door' // Aula 413. Problema de Monty Hall #03
 export default {
     name: 'App', // Não é obrigatório colocar o name, mas ajuda na hora de inspecionar o elemento
-    components: { Gift }
+    components: { Door }
 }
 </script>
 
