@@ -1,14 +1,18 @@
-// 411. Problema de Monty Hall #01
+// Aula 411. Problema de Monty Hall #01
 
 <template>
     <div id="app">
         <h1>Problema de Monty Hall</h1>
+        <Gift />
     </div>
 </template>
 
 <script>
+// importação utilizando o padrão de importação de módulos do ECMAScript 2015
+import Gift from './components/Gift'
 export default {
-
+    name: 'App', // Não é obrigatório colocar o name, mas ajuda na hora de inspecionar o elemento
+    components: { Gift }
 }
 </script>
 
