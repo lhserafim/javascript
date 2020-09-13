@@ -1,7 +1,7 @@
 // Aula 413. Problema de Monty Hall #03
 <template>
     <div class="door-area">
-        <div class="door-frame" :class="{ selected }">
+        <div class="door-frame" :class="{ selected: selected && !open }">
             <Gift v-if="open && hasGift"/> <!-- Escondendo o presente --> 
         </div>
         <!-- Trabalhando com a seleção da porta -->
