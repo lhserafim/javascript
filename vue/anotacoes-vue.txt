@@ -13,3 +13,12 @@ Criando o projeto da calculadora
 4. As pastas foram criadas, agora basta acessá-la 
 5. Dentro do diretório criado calculator, digitar npm run serve
 6. Clicar no link gerado
+
+Aplicação Desktop com JavaScript, Electron JS e Vue JS
+1. Caso eu não tenha o comand line do vue (cli) No terminal integrado, digitar: sudo npm i -g @vue/cli
+2. Após a instalação, criar o projeto via cli, no terminal (dentro da pasta vue), digitar: vue create most-used-words
+3. ACESSAR se o diretório do projeto foi criado, acessá-lo e instalar o plugin vuetify. Digitar: vue add vuetify
+4. Ainda dentro do diretório most-used-words, add outro plugin (electron): vue add electron-builder
+    4.1. Escolher a opção do elctron
+5. No terminal digitar: cat package.json, para ver o arquivo
+6. Para abrir o programa, digitar: npm run electron:serve
