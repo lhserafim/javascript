@@ -5,10 +5,13 @@
       <!-- O comando abaixo vai criar uma toolbar (cabeçalho) no meu programa--> 
       <v-toolbar-title>Most Used Words</v-toolbar-title>
     </v-app-bar>
-    
-    <v-content>
+    <!-- [Vuetify] [UPGRADE] 'v-content' is deprecated, use 'v-main' instead. -->
+    <!-- <v-content>
       <Home />
-    </v-content>
+    </v-content> -->
+    <v-main>
+      <Home />
+    </v-main>
   </v-app>
 
 

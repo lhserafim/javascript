@@ -31,7 +31,7 @@ function createWindow() {
     win.loadURL(process.env.WEBPACK_DEV_SERVER_URL)
     // Aula 417. Ajustes Iniciais e Alterando o Título da Janela
     // Comentado, para não abrir a janela de desenvolvimento
-    //if (!process.env.IS_TEST) win.webContents.openDevTools()
+    if (!process.env.IS_TEST) win.webContents.openDevTools()
   } else {
     createProtocol('app')
     // Load the index.html when not in development
