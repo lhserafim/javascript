@@ -50,3 +50,10 @@ Como criar um componente e importá-lo usando Vue
             Componente
         }
     4.3. Em <template>, chamar o componente <Componente />
+5. Como houveram mudanças na versão 9 do electron, é necessário alterar o arquivo vue.config.js, para poder utilizar o IPC
+    5.1. Alterar o vue.config.js para:
+    module.exports = {
+        transpileDependencies: ["vuetify"],
+        pluginOptions: { electronBuilder: { nodeIntegration: true } },
+    };
+    5.2. Fechar completamente o Visual Studio, encerrar o electron e reiniciar utilizando npm run electron:serve

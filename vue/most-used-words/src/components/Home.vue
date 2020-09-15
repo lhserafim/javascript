@@ -31,22 +31,29 @@
 </template>
 
 <script>
+import { ipcRenderer } from 'electron' // Aula 421. Utilizando Electron IPC (Inter-Process Communication)
 import Pill from './Pill'
+
 export default {
     components: { Pill },
     data: function () {
         return {
             files: [], // Espera o dado que vem do v-model, dentro do v-file-input e irá processar pelo método processSubtitles
-            groupedWords: [
-                {name: 'i', amount: 1234},
-                {name: 'you', amount: 980},
-                {name: 'he', amount: 853}
-            ]
+            groupedWords: [] // Espera o retorno do backend - o index.js, utilizando ipc // Aula 421. Utilizando Electron IPC (Inter-Process Communication)
         }
     },
     methods: {
         processSubtitles() {
             console.log(this.files)
+            // Aula 421. Utilizando Electron IPC (Inter-Process Communication)
+            const paths = this.files.map(f => f.path) // eu poderia pegar outros atributos do arquivo como: name, lastModifiedDate, size, type
+            // O send está estabelecendo uma comunicação assíncrona com o meu backend
+            // O primeiro parâmetro (process-subtitles), é o nome do canal de comunicação
+            ipcRenderer.send('process-subtitles', paths)
+            ipcRenderer.on('process-subtitles', (event, resp) => {
+                //console.log(resp)
+                this.groupedWords = resp
+            })
         }
     }
 
