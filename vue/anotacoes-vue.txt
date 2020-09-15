@@ -22,3 +22,31 @@ Aplicação Desktop com JavaScript, Electron JS e Vue JS
     4.1. Escolher a opção do elctron
 5. No terminal digitar: cat package.json, para ver o arquivo
 6. Para abrir o programa, digitar: npm run electron:serve
+
+Como criar um componente e importá-lo usando Vue
+1. Dentro da pasta /src/components, criar o componente exemplo Componente.vue
+2. Dentro do componente, criar o template padrão conforme exemplo:
+    <template>
+    <div>
+        
+    </div>
+    </template>
+
+    <script>
+    export default {
+
+    }
+    </script>
+
+    <style>
+
+    </style>
+    2.1. Dica, utilizar o plugin Vetur para auxiliar na geração automática de template, pressionando ctrl + space
+3. Dentro deste componente, fazer as alterações necessárias
+4. Acessar o arquivo App.vue, que irá importar os componentes
+    4.1. Dentro de <script> importar o componente: import Componente from './components/Componente'
+    4.2. Dentro export default, referenciar o componente ex:
+        components: {
+            Componente
+        }
+    4.3. Em <template>, chamar o componente <Componente />
