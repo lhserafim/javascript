@@ -14,3 +14,7 @@
     8.2. O instalador fará duas perguntas. Escolher: y para router e css para estilo
 9. Após a instalação, acessar o diretório frontend e digitar: npm start
     9.1. Neste momento temos o backend e o frontend rodando em portas separadas (em dois terminais)
+10. IMPORTANTE: Abrir o arquivo de configuração angular.json e fazer duas alterações
+    10.1. Alterar para false as opções abaixo, para que sejam gerados os arquivos .css e .html SEPARADOS!
+        "inlineTemplate": false,
+        "inlineStyle": false,
