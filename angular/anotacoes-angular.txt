@@ -6,3 +6,11 @@
 4. Criar um arquivo /backend/db.json, com um json para ser lido pelo json-server e transformado em api
 5. Alterar o arquivo, package.json. Remover o "test" e adicionar "start": "json-server --watch db.json --port 3001"
 6. Rodar o teste. Digitar npm start para ver se carrega o end-point
+7. Instalar o CLI do angular
+    7.1. Em um terminal separado, acessar o diretório crud e digitar: sudo npm i -g @angular/cli
+    7.2. Após a instalação, validar instalação: ng version e verificar a instalação
+8. Para criar o projeto, dentro da pasta crud, digitar: ng new frontend --minimal 
+    8.1. O minimal irá instalar só o essencial para o nosso desenvolvimento
+    8.2. O instalador fará duas perguntas. Escolher: y para router e css para estilo
+9. Após a instalação, acessar o diretório frontend e digitar: npm start
+    9.1. Neste momento temos o backend e o frontend rodando em portas separadas (em dois terminais)
