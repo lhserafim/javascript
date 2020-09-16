@@ -1,0 +1,8 @@
+1. Criar um diretório /angular/crud/backend
+2. Acessar a pasta backend e digitar o comando: npm init -y para criar o arquivo package.json
+3. Em seguida, ainda dentro de backend, digitar: npm i json-server
+    3.1. Esta instalação irá atualizar o arquivo package.json, adicionando a dependência e também criar o package-lock.json
+    3.2. O que este json faz, basicamente é ler um arquivo json e criar uma api baseada neste json
+4. Criar um arquivo /backend/db.json, com um json para ser lido pelo json-server e transformado em api
+5. Alterar o arquivo, package.json. Remover o "test" e adicionar "start": "json-server --watch db.json --port 3001"
+6. Rodar o teste. Digitar npm start para ver se carrega o end-point
