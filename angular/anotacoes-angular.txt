@@ -18,3 +18,10 @@
     10.1. Alterar para false as opções abaixo, para que sejam gerados os arquivos .css e .html SEPARADOS!
         "inlineTemplate": false,
         "inlineStyle": false,
+11. Para corrigir o arquivo app.component.ts, que foi criado com inlineTemplate e inlineStyle, fazer o seguinte ajuste
+    11.1. Excluir TUDO que está contido em template e styles
+    11.2. Criar uma linha, logo abaixo do selector, como: templateUrl: 'app.component.html'
+    11.3. Dentro de src/app, criar o arquivo app.component.html e digitar um <h1> só para testar
+    11.4. Dentro do export class AppComponent {, excluir o title = 'frontend';
+12. Instalar o MATERIAL DESIGN. No terminal, parar o angular e dentro de frontend digitar: ng add @angular/material
+    12.1. Durante a instalação responder as perguntas com enter e y
