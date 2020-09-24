@@ -25,3 +25,11 @@
     11.4. Dentro do export class AppComponent {, excluir o title = 'frontend';
 12. Instalar o MATERIAL DESIGN. No terminal, parar o angular e dentro de frontend digitar: ng add @angular/material
     12.1. Durante a instalação responder as perguntas com enter e y
+13. Gerar o HEADER. Em uma janela de terminal separada, acessar: cd angular/crud/frontend/ e fazer a criação do componente header. Digitar: ng g c components/template/header
+    13.1. Este comando fará com que o CLI do angular crie o diretório e os 3 arquivos (html, css, ts) separados
+        EX.: lhserafim@MacBook-Pro-de-Luiz frontend % ng g c components/template/header
+            CREATE src/app/components/template/header/header.component.css (0 bytes)
+            CREATE src/app/components/template/header/header.component.html (21 bytes)
+            CREATE src/app/components/template/header/header.component.ts (275 bytes)
+14. Gerar o FOOTER. Em uma janela de terminal separada, acessar: cd angular/crud/frontend/ e fazer a criação do componente header. Digitar: ng g c components/template/footer
+    14.1. O processo gera os 3 arquivos, conforme citados no item 13.1.
