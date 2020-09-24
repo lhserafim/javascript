@@ -33,3 +33,5 @@
             CREATE src/app/components/template/header/header.component.ts (275 bytes)
 14. Gerar o FOOTER. Em uma janela de terminal separada, acessar: cd angular/crud/frontend/ e fazer a criação do componente header. Digitar: ng g c components/template/footer
     14.1. O processo gera os 3 arquivos, conforme citados no item 13.1.
+15. Gerar o NAV. Em uma janela de terminal separada, acessar: cd angular/crud/frontend/ e fazer a criação do componente header. Digitar: ng g c components/template/nav
+    15.1. O processo gera os 3 arquivos, conforme citados no item 13.1.

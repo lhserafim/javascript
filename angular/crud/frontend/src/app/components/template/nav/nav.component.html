@@ -1,0 +1,22 @@
+<!-- Aula 437. Componente Navegação -->
+<mat-sidenav-container class="container">
+    <!-- As propriedades definidas abaixo (mode ; opened; fixedInViewport é que farão exibir o sidenav) -->
+    <!-- fixedTopGap faz com que os itens desçam e saiam da toolbar -->
+    <mat-sidenav class="sidenav" mode="side" opened fixedInViewport="true" fixedTopGap="64">
+        <mat-nav-list class="nav-list">
+            <!-- mat-list-item vai colocar um ícone debaixo do outro -->
+            <a mat-list-item>
+                <i class="material-icons">
+                    home
+                </i>
+                Início
+            </a>
+            <a mat-list-item>
+                <i class="material-icons">
+                    storefront
+                </i>
+                Início
+            </a>            
+        </mat-nav-list>
+    </mat-sidenav>
+</mat-sidenav-container>
