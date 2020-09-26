@@ -35,3 +35,5 @@
     14.1. O processo gera os 3 arquivos, conforme citados no item 13.1.
 15. Gerar o NAV. Em uma janela de terminal separada, acessar: cd angular/crud/frontend/ e fazer a criação do componente header. Digitar: ng g c components/template/nav
     15.1. O processo gera os 3 arquivos, conforme citados no item 13.1.
+16. Gerar o HOME. Em uma janela de terminal separada, acessar: cd angular/crud/frontend/ e fazer a criação do componente header. Digitar: ng g c views/home
+    16.1. O processo gera os 3 arquivos, conforme citados no item 13.1.

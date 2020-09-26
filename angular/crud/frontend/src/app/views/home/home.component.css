@@ -1,0 +1,16 @@
+/* Aula 441. Componente Início (Home) */
+/* Diferença entre rem e em
+Ambas são fontes relativas, que são melhores pensando na página quando o usuário quer aplicar um zoom e por usar tamanhos
+relativos, eles ficam proporcionais na página
+rem -> é relativo ao RAIZ DA PÁGINA
+em -> é relativo ao pai do elemento */
+
+.home .title {
+    font-size: 3rem; 
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+.home .subtitle {
+    font-size: 1.1rem;
+}
