@@ -19,6 +19,7 @@ import { HomeComponent } from './views/home/home.component';
 // Aula 441. Componente Início (Home)
 import { MatCardModule } from '@angular/material/card';
 import { ProductCrudComponent } from './views/product-crud/product-crud.component';
+import { RedDirective } from './directives/red.directive';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ProductCrudComponent } from './views/product-crud/product-crud.componen
     FooterComponent,
     NavComponent,
     HomeComponent,
-    ProductCrudComponent
+    ProductCrudComponent,
+    RedDirective
   ],
   imports: [
     BrowserModule,

@@ -39,3 +39,6 @@
     16.1. O processo gera os 3 arquivos, conforme citados no item 13.1.
 17. Gerar o PRODUCT-CRUD. Em uma janela de terminal separada, acessar: cd angular/crud/frontend/ e fazer a criação do componente product-crud. Digitar: ng g c views/product-crud
     17.1. O processo gera os 3 arquivos, conforme citados no item 13.1.
+18. Gerar uma DIRETIVA de atributo RED. Em uma janela de terminal separada, acessar: cd angular/crud/frontend/ e fazer a criação da diretiva de atributo red. Digitar: ng g d directives/red
+    18.1. O processo gera os 1 arquivo e faz update em outro
+    18.2. Diretivas de atributo mexem no comportamento e estilo do seu elemento
