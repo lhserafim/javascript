@@ -44,4 +44,6 @@
     18.2. Diretivas de atributo mexem no comportamento e estilo do seu elemento
 19. Gerar uma DIRETIVA estrutural FOR. Em uma janela de terminal separada, acessar: cd angular/crud/frontend/ e fazer a criação da diretiva estrutural for. Digitar: ng g d directives/for
     19.1. O processo gera os 1 arquivo e faz update em outro
-    
+20. Gerar o PRODUCT-CREATE. Em uma janela de terminal separada, acessar: cd angular/crud/frontend/ e fazer a criação do componente product-create. Digitar: ng g c components/product/product-create
+    20.1. O processo gera os 3 arquivos, conforme citados no item 13.1.
+    20.2. Adicionar o product-create as rotas (em app.routing.module.ts)    
