@@ -5,23 +5,24 @@
     <mat-sidenav class="sidenav" mode="side" opened fixedInViewport="true" fixedTopGap="64">
         <mat-nav-list class="nav-list">
             <!-- mat-list-item vai colocar um ícone debaixo do outro -->
-            <a mat-list-item>
+            <a mat-list-item routerLink="/"> <!-- Aula 442. Navegando entre Componentes -->
                 <i class="material-icons">
                     home
                 </i>
                 Início
             </a>
-            <a mat-list-item>
+            <a mat-list-item routerLink="/products"> <!-- Aula 442. Navegando entre Componentes -->
                 <i class="material-icons">
                     storefront
                 </i>
-                Início
+                Produtos
             </a>            
         </mat-nav-list>
     </mat-sidenav>
     <!-- Aula 441. Componente Início (Home) -->
     <mat-sidenav-content class="content">
-        <app-home>
-        </app-home>
+        <!-- <app-home></app-home> -->
+        <!-- Aula 442. Navegando entre Componentes -->
+        <router-outlet></router-outlet>
     </mat-sidenav-content>
 </mat-sidenav-container>
