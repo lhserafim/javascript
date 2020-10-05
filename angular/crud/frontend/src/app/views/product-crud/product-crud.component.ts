@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+//Aula 447. Navegar para Tela de Criar Produtos
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-product-crud',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductCrudComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { } // Aula 447. Navegar para Tela de Criar Produtos - Injeção de dependências
 
   ngOnInit(): void {
+  }
+
+  navigateToProductCreate(): void {
+    //console.log('Navegando...')
+    this.router.navigate(['/products/create'])
   }
 
 }
