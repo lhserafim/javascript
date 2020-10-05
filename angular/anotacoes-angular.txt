@@ -46,4 +46,10 @@
     19.1. O processo gera os 1 arquivo e faz update em outro
 20. Gerar o PRODUCT-CREATE. Em uma janela de terminal separada, acessar: cd angular/crud/frontend/ e fazer a criação do componente product-create. Digitar: ng g c components/product/product-create
     20.1. O processo gera os 3 arquivos, conforme citados no item 13.1.
-    20.2. Adicionar o product-create as rotas (em app.routing.module.ts)    
+    20.2. Adicionar o product-create as rotas (em app.routing.module.ts)
+21. Implementação de SERVICES em angular. Os services são indicados para que você mantenha o seu componente o mais "MAGRO" possível, ou seja, que ele tenha menos responsabilidades.
+    Normalmente o component tem apenas as responsabilidades relacionadas a sua exibição. Se você precisar de um componente que acesse um backend, que lide com chamadas http ou implementar
+    regras e lógicas de negócio o IDEAL e RECOMENDADO é que você SEPARE este compomente em serviços. Enfim, usamos components p/ visual e services p/ a parte de lógica e integrações
+    21.1. Criando um service. No terminal, dentro de frontend digitar: ng g s components/product/product
+        21.1.1. Será criado um service
+        CREATE src/app/components/product/product.service.ts (136 bytes)
