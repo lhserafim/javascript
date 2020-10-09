@@ -1,0 +1,11 @@
+/* Aula 451. Formulário Criar Produto */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    margin: 20px 15px 0px 0px;
+    /* margin-top: 20px;
+    margin-right: 15px; */
+}
