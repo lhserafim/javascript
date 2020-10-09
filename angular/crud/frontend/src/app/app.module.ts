@@ -26,6 +26,8 @@ import { ProductCreateComponent } from './components/product/product-create/prod
 import { MatButtonModule } from '@angular/material/button';
 // Aula 449. Produto Service
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+// Aula 450. Método Criar Produto
+import {HttpClientModule} from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -48,7 +50,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatListModule,
     MatCardModule,
     MatButtonModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
