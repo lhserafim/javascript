@@ -31,4 +31,9 @@ export class ProductService {
   create(product: Product): Observable<Product> {
     return this.http.post<Product>(this.baseUrl, product)
   }
+
+  // Aula 452. Componente Obter Produto
+  read(): Observable<Product[]> {
+    return this.http.get<Product[]>(this.baseUrl)
+  }
 }
