@@ -53,3 +53,5 @@
     21.1. Criando um service. No terminal, dentro de frontend digitar: ng g s components/product/product
         21.1.1. Será criado um service
         CREATE src/app/components/product/product.service.ts (136 bytes)
+22. Existe um recurso no Angular chamado schematics: https://material.angular.io/guide/schematics. Este recurso possibilita criar os componentes de uma forma mais simples
+    22.1. Criando uma table. No terminal, digitar: ng generate @angular/material:table components/product/product-read2
