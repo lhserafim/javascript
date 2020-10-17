@@ -54,4 +54,10 @@
         21.1.1. Será criado um service
         CREATE src/app/components/product/product.service.ts (136 bytes)
 22. Existe um recurso no Angular chamado schematics: https://material.angular.io/guide/schematics. Este recurso possibilita criar os componentes de uma forma mais simples
-    22.1. Criando uma table. No terminal, digitar: ng generate @angular/material:table components/product/product-read2
+    22.1. Criando uma table. No terminal, na pasta frontend, digitar: ng generate @angular/material:table components/product/product-read2
+    22.2. Na minha criação do schematics as importações abaixo não foram realizadas automaticamente!
+        import { ProductRead2Component } from './components/product/product-read2/product-read2.component';
+        import { MatTableModule } from '@angular/material/table';
+        import { MatPaginatorModule } from '@angular/material/paginator';
+        import { MatSortModule } from '@angular/material/sort';
+            
