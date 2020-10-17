@@ -20,7 +20,7 @@ export class ProductUpdateComponent implements OnInit {
 
   ngOnInit(): void {
     // fazendo o esquema para que quando editar, já carregar os dados no formulário
-    const id = this.route.snapshot.paramMap.get('id')
+    const id = +this.route.snapshot.paramMap.get('id') // o + serve para transformar em number
     this.productService.readById(id).subscribe(product => {
       this.product = product
     });

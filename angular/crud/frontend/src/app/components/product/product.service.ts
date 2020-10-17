@@ -38,7 +38,7 @@ export class ProductService {
   }
 
   // Aula 458. Novos Métodos em Produto Service
-  readById(id: string): Observable<Product> {
+  readById(id: number): Observable<Product> {
     const url = `${this.baseUrl}/${id}`
     return this.http.get<Product>(url)
   }
@@ -49,7 +49,7 @@ export class ProductService {
   }
 
   // Aula 462. Desafio Método Excluir Produto - Resposta
-  delete(id: string): Observable<Product> {
+  delete(id: number): Observable<Product> {
     const url = `${this.baseUrl}/${id}`
     return this.http.delete<Product>(url)
   }

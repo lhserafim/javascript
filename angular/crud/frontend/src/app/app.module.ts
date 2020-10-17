@@ -44,6 +44,8 @@ import localePt from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common' 
 // Aula 460. Componente Atualizar Produto #02
 import { ProductUpdateComponent } from './components/product/product-update/product-update.component';
+// Aula 464. Desafio Componente Excluir Produto - Resposta
+import { ProductDeleteComponent } from './components/product/product-delete/product-delete.component';
 
 registerLocaleData(localePt);
 
@@ -60,7 +62,8 @@ registerLocaleData(localePt);
     ProductCreateComponent,
     ProductReadComponent,
     ProductRead2Component,
-    ProductUpdateComponent
+    ProductUpdateComponent,
+    ProductDeleteComponent
   ],
   imports: [
     BrowserModule,
