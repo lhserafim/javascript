@@ -42,6 +42,8 @@ import { MatSortModule } from '@angular/material/sort';
 // Aula 456. Tabela Produtos
 import localePt from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common' 
+// Aula 460. Componente Atualizar Produto #02
+import { ProductUpdateComponent } from './components/product/product-update/product-update.component';
 
 registerLocaleData(localePt);
 
@@ -57,7 +59,8 @@ registerLocaleData(localePt);
     ForDirective,
     ProductCreateComponent,
     ProductReadComponent,
-    ProductRead2Component
+    ProductRead2Component,
+    ProductUpdateComponent
   ],
   imports: [
     BrowserModule,
