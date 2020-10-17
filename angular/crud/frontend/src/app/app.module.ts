@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core'; // Aula 456. Tabela Produtos - Importar o LOCALE_ID para trabalhar com . , no padrão BR
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -39,6 +39,11 @@ import { ProductRead2Component } from './components/product/product-read2/produc
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+// Aula 456. Tabela Produtos
+import localePt from '@angular/common/locales/pt';
+import { registerLocaleData } from '@angular/common' 
+
+registerLocaleData(localePt);
 
 @NgModule({
   declarations: [
@@ -72,7 +77,10 @@ import { MatSortModule } from '@angular/material/sort';
     MatPaginatorModule,
     MatSortModule,    
   ],
-  providers: [],
+  providers: [{ //Aula 456. Tabela Produtos
+    provide: LOCALE_ID,
+    useValue: 'pt-BR'
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
