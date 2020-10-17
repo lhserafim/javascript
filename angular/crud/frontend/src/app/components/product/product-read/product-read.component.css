@@ -1,3 +1,16 @@
+/* Aula 456. Tabela Produtos */
 table {
     width: 100%;
+}
+
+/* Aula 457. Adicionando Coluna Ações */
+.edit {
+    margin-right: 10px;
+}
+.edit > i {
+    color: #d9cd26;
+}
+
+.delete > i {
+    color: #e35e6b;
 }
