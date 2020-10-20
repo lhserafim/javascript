@@ -9,15 +9,15 @@ import { MatToolbarModule} from '@angular/material/toolbar'; -->
         </a>
     </span>
     <span class="title-group">
-        <a>
+        <a routerLink="{{ routeUrl }}"> <!-- Aula 466. Atualizando os Títulos -->
             <i class="material-icons">
                 <!-- Colocar ícone do lado do nome da cod3r -->
                 <!-- dashboard -->
-                home
+                {{ icon }} <!-- Aula 466. Atualizando os Títulos --> 
             </i>
             <!-- Aplicação CRUD -->
             <!-- Aula 441. Componente Início (Home) -->
-            Início
+            {{ title }} <!-- Aula 466. Atualizando os Títulos --> 
         </a>
 
     </span>
