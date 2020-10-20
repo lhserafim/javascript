@@ -12,7 +12,11 @@ export class ProductDeleteComponent implements OnInit {
 
   // Aula 464. Desafio Componente Excluir Produto - Resposta
 
-  product: Product
+  //product: Product
+  product: Product = { 
+    name: '',
+    price: null
+  }
 
   constructor(
     private productService: ProductService,

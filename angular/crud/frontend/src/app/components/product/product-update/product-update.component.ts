@@ -11,7 +11,12 @@ import { ProductService } from '../product.service';
 export class ProductUpdateComponent implements OnInit {
 
   // Aula 460. Componente Atualizar Produto #02
-  product: Product
+  //product: Product
+  // Alterado p/ evitar o erro: undefined is not an object
+  product: Product = { 
+    name: '',
+    price: null
+  }
 
   constructor(
     private productService: ProductService, 
