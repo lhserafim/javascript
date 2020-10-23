@@ -17,5 +17,11 @@
         DE: "test": "echo \"Error: no test specified\" && exit 1"
         PARA: "start": "nodemon"
 7. Para startar o nodemon, no terminal digitar: nodemon index.js ou npm start
-
-
+8. Instalação do PM2, que é utilizado quando subimos em produção. Vou instalar de forma local. No terminal digitar: npm i --save pm2
+    8.1. Alterar o "scripts" do arquivo package.json, conforme abaixo:
+        "production": "pm2 start index.js --name appx-backend"
+    8.2. Para executar, digitar: npm run production
+    8.3. Para instalar o PM2 de forma global: sudo npm i -g pm2
+        8.3.1. Instalando de forma global, eu posso utilizar alguns recursos extras, como por exemplo ir no terminal e 
+                digitar: pm2 monit, para abrir o monitor da execução
+    8.4. Para matar o PM2, digitar pm2 kill
