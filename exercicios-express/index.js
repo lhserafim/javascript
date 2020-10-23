@@ -4,7 +4,11 @@ const app = express()
 
 // o use (ou o all) é utilizado p/ qualquer tipo de requisição (get, post, put, etc). Posso "travar" com app.get, etc.
 app.use((req, res) => {
-    res.send('Hello World!')
+    //res.send('Hello World!')
+    res.json({
+        name: 'MacBook Pro',
+        price: '19202.00'
+    })
 })
 
 //app.listen(3000)
