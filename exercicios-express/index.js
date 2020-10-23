@@ -4,6 +4,9 @@ const bodyParser = require('body-parser')
 // importando o arquivo middleware.js, através do seu caminho relativo
 const saudacao = require('./middleware')
 
+// Chamando direto, sem criar uma constante
+const produtoApi = require('./api/produto')
+produtoApi(app, 'com param!')
 
 // usando o body-parser
 app.use(bodyParser.text())
