@@ -6,3 +6,16 @@
 4. Dentro do diretório exercicos-express, criar um arquivo .gitignore
     4.1. Dentro do arquivo .gitignore, digitar node_modules, para ignorar e não sincronizar com o git
 5. Dentro do diretório exercicos-express, criar um arquivo index.js
+    5.1. Configurar o listener:
+        const express = require('express')
+        const app = express()
+        app.listen(3000)
+    5.2. No terminal digitar: node index.js
+6. Instalar dependência de desenvolvimento nodemon. No terminal digitar: npm i --save-dev nodemon
+    6.1. O nodemon monitora os arquivos e qualquer alteração que eu fizer ele reinicia a aplicação
+    6.2. Alterar o "scripts" do arquivo package.json, conforme abaixo:
+        DE: "test": "echo \"Error: no test specified\" && exit 1"
+        PARA: "start": "nodemon"
+7. Para startar o nodemon, no terminal digitar: nodemon index.js ou npm start
+
+
