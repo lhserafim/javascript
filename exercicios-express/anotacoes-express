@@ -1,0 +1,8 @@
+1. Criar o diretório exercicos-express
+2. Acessar o diretório pelo terminal e digitar o comando: npm init -y
+    2.1. Será criado o arquivo package.json
+3. Instalar a dependência do express. No terminal, ainda dentro do mesmo diretório, digitar: npm i --save express
+    3.1. A pasta node_modules será criada
+4. Dentro do diretório exercicos-express, criar um arquivo .gitignore
+    4.1. Dentro do arquivo .gitignore, digitar node_modules, para ignorar e não sincronizar com o git
+5. Dentro do diretório exercicos-express, criar um arquivo index.js
