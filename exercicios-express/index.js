@@ -1,8 +1,14 @@
 const express = require('express')
 const app = express()
-
+const bodyParser = require('body-parser')
 // importando o arquivo middleware.js, através do seu caminho relativo
 const saudacao = require('./middleware')
+
+
+// usando o body-parser
+app.use(bodyParser.text())
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use(saudacao('Luiz Henrique'))
 
@@ -23,16 +29,20 @@ app.get('/clientes/:id', (req, res) => {
     res.send(`Cliente ${req.params.id} selecionado!`)
 })
 
-// Fazendo post, sem bodyparser
-app.post('/corpo', (req, res) => {
-    let corpo = ''
-    req.on('data', function(parte) {
-        corpo += parte
-    })
 
-    req.on('end', function() {
-        res.send(corpo)
-    })
+app.post('/corpo', (req, res) => {
+    // Fazendo post, sem bodyparser
+    // let corpo = ''
+    // req.on('data', function(parte) {
+    //     corpo += parte
+    // })
+
+    // req.on('end', function() {
+    //     res.send(corpo)
+    // })
+
+    // Fazendo com o bodyParser
+    res.send(req.body)
 })
 
 // o use (ou o all) é utilizado p/ qualquer tipo de requisição (get, post, put, etc). Posso "travar" com app.get, etc.
